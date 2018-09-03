@@ -4,6 +4,7 @@
   -->
 
 <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/bd_btn_confirm"
         style="@style/BD.AppTheme.Button"
         android:layout_width="match_parent"
@@ -11,5 +12,6 @@
         android:background="@drawable/bd_selector_button_radius"
         android:text="@string/box_btn_sure"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/sizeTextNormal"
-        android:visibility="visible"/>
+        android:textSize="@dimen/sizeTextBottomButton"
+        android:visibility="visible"
+        tools:ignore="PrivateResource"/>

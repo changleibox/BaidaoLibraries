@@ -12,6 +12,7 @@
     <dimen name="sizeTextSmall">14sp</dimen>
     <dimen name="sizeTextSuperLarge">28sp</dimen>
     <dimen name="sizeTextSuperSmall">12sp</dimen>
+    <dimen name="sizeTextBottomButton">@dimen/sizeTextNormal</dimen>
 
     <dimen name="sizeDividerLarge">8dp</dimen>
     <dimen name="sizeDividerNormal">0.5dp</dimen>

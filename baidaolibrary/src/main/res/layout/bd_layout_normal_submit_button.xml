@@ -11,5 +11,5 @@
         android:background="@drawable/bd_selector_button_radius"
         android:text="@string/bd_btn_submit"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/sizeTextNormal"
+        android:textSize="@dimen/sizeTextBottomButton"
         android:visibility="visible"/>

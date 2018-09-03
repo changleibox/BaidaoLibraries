@@ -102,6 +102,12 @@ public class HasBackgroundPopupWindow extends SupportPopupWindow implements
     }
 
     @Override
+    public void setInputMethodMode(int mode) {
+        mBackground.setInputMethodMode(mode);
+        super.setInputMethodMode(mode);
+    }
+
+    @Override
     public void setOutsideTouchable(boolean touchable) {
         mBackground.setOutsideTouchable(touchable);
         super.setOutsideTouchable(touchable);

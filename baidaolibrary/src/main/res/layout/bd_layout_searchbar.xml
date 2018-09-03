@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<com.baidaojuhe.library.baidaolibrary.widget.IToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bd_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:paddingBottom="6dp"
+    android:paddingLeft="@dimen/sizePaddingNormal"
+    android:paddingRight="@dimen/sizePaddingNormal"
+    android:paddingTop="6dp"
+    android:theme="?attr/actionBarTheme"
+    app:navigationIcon="@null"
+    app:paddingEnd="0dp"
+    app:paddingStart="0dp"
+    tools:ignore="RtlHardcoded,RtlSymmetry">
+
+    <Button
+        android:id="@+id/bd_btn_cancel"
+        style="@style/BD.AppTheme.Button.Small"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginLeft="@dimen/sizeMarginNormal"
+        android:background="?attr/actionBarItemBackground"
+        android:paddingEnd="@dimen/sizePaddingNormal"
+        android:paddingStart="@dimen/sizePaddingNormal"
+        android:text="@string/box_btn_cancel"
+        android:textColor="@color/box_text_color_blue"
+        tools:ignore="RtlHardcoded"/>
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/bd_searchview"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@drawable/bd_shape_search_view_background"
+        app:closeIcon="@drawable/box_btn_clean"
+        app:defaultQueryHint="@string/bd_hint_search"
+        app:layout="@layout/bd_layout_search_view"
+        app:paddingEnd="0dp"
+        app:paddingStart="0dp"
+        app:queryBackground="@android:color/transparent"
+        app:queryHint="@string/bd_hint_search"
+        app:searchIcon="@null"
+        app:theme="@style/Widget.AppCompat.SearchView"/>
+
+</com.baidaojuhe.library.baidaolibrary.widget.IToolbar>

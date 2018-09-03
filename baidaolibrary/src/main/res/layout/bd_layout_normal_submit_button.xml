@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bd_btn_submit"
+        style="@style/BD.AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bd_selector_button_radius"
+        android:text="@string/bd_btn_submit"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sizeTextNormal"
+        android:visibility="visible"/>

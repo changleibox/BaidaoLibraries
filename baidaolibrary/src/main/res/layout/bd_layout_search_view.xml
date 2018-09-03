@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/search_bar"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <!-- This is actually used for the badge icon *or* the badge label (or neither) -->
+    <TextView
+        android:id="@+id/search_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="2dip"
+        android:drawablePadding="0dip"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="?android:attr/textColorPrimary"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/search_button"
+        style="?attr/actionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/bd_library_name"
+        android:focusable="true"/>
+
+    <LinearLayout
+        android:id="@+id/search_edit_frame"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:layout_weight="1"
+        android:layoutDirection="locale"
+        android:orientation="horizontal"
+        tools:targetApi="jelly_bean_mr1">
+
+        <ImageView
+            android:id="@+id/search_mag_icon"
+            style="@style/RtlOverlay.Widget.AppCompat.SearchView.MagIcon"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/bd_library_name"
+            android:scaleType="centerInside"
+            android:visibility="gone"/>
+
+        <!-- Inner layout contains the app icon, button(s) and EditText -->
+        <LinearLayout
+            android:id="@+id/search_plate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            tools:ignore="NestedWeights">
+
+            <view
+                android:id="@+id/search_src_text"
+                class="com.baidaojuhe.library.baidaolibrary.widget.SearchAutoComplete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:dropDownAnchor="@id/search_edit_frame"
+                android:dropDownHeight="wrap_content"
+                android:dropDownHorizontalOffset="0dip"
+                android:dropDownVerticalOffset="0dip"
+                android:ellipsize="end"
+                android:imeOptions="actionSearch"
+                android:inputType="text|textNoSuggestions"
+                android:maxLines="1"
+                android:textAppearance="@style/BD.AppTheme.TextAppearance.Small"
+                android:textColor="#333"
+                android:textColorHint="#999"
+                tools:ignore="NestedWeights"
+                tools:text="@string/bd_library_name"/>
+
+            <ImageView
+                android:id="@+id/search_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/bd_library_name"
+                android:focusable="true"
+                android:paddingLeft="@dimen/sizePaddingSmall"
+                android:paddingRight="@dimen/sizePaddingSmall"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/submit_area"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/search_go_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/bd_library_name"
+                android:focusable="true"
+                android:paddingLeft="16dip"
+                android:paddingRight="16dip"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/search_voice_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/bd_library_name"
+                android:focusable="true"
+                android:paddingLeft="16dip"
+                android:paddingRight="16dip"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

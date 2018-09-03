@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bd_rv_answer"
+        style="@style/BD.AppTheme.RecyclerView"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/sizePaddingNormal"/>
+
+    <View style="@style/BD.AppTheme.Divider.Horizontal.Dark"/>
+
+    <FrameLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:padding="@dimen/sizePaddingNormal">
+
+        <include layout="@layout/bd_layout_normal_confirm_button"/>
+    </FrameLayout>
+</LinearLayout>

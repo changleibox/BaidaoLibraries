@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/BD.AppTheme.Container.Layout"
+              android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:divider="@drawable/bd_shape_divider_horizontal"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            style="@style/BD.AppTheme.ItemButton"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/sizePaddingNormal"
+            android:paddingRight="@dimen/sizePaddingNormal">
+
+            <ImageView
+                android:id="@+id/bd_iv_dropdown"
+                style="@style/BD.AppTheme.ImageView"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bd_selector_expand_collapse_arrows"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/bd_tv_title"
+                style="@style/BD.AppTheme.TextView.SingleLine"
+                android:layout_marginStart="@dimen/sizePaddingNormal"
+                android:gravity="center_vertical"
+                tools:text="@string/app_name"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/bd_rv_subitem"
+            style="@style/BD.AppTheme.RecyclerView"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bd_divider"
+        style="@style/BD.AppTheme.Divider.Horizontal"/>
+
+</LinearLayout>

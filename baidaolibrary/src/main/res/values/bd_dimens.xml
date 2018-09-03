@@ -1,0 +1,35 @@
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<resources>
+    <dimen name="abc_action_bar_default_height">48dp</dimen>
+
+    <!-- 字体 -->
+    <dimen name="sizeTextNormal">16sp</dimen>
+    <dimen name="sizeTextLarge">24sp</dimen>
+    <dimen name="sizeTextMedium">18sp</dimen>
+    <dimen name="sizeTextSmall">14sp</dimen>
+    <dimen name="sizeTextSuperLarge">28sp</dimen>
+    <dimen name="sizeTextSuperSmall">12sp</dimen>
+
+    <dimen name="sizeDividerLarge">8dp</dimen>
+    <dimen name="sizeDividerNormal">0.5dp</dimen>
+    <dimen name="sizePaddingNormal">8dp</dimen>
+    <dimen name="sizePaddingLarge">24dp</dimen>
+    <dimen name="sizePaddingMedium">12dp</dimen>
+    <dimen name="sizePaddingSmall">4dp</dimen>
+    <dimen name="sizeMarginNormal">8dp</dimen>
+    <dimen name="sizeMarginLarge">16dp</dimen>
+    <dimen name="sizeMarginSmall">4dp</dimen>
+    <dimen name="sizeMarginMedium">12dp</dimen>
+    <dimen name="sizeItemButton">48dp</dimen>
+    <dimen name="sizeItemButtonDrawablePadding">8dp</dimen>
+    <dimen name="sizeDrawablePadding">4dp</dimen>
+    <dimen name="sizeItemButtonNormal">48dp</dimen>
+    <dimen name="sizeRadiusNormal">4dp</dimen>
+    <dimen name="sizeDialogButton">48dp</dimen>
+    <dimen name="sizeDialogMinWidth">300dp</dimen>
+    <dimen name="sizeLinkage">116dp</dimen>
+    <dimen name="sizeDividerBottomMarginLeft">58dp</dimen>
+</resources>

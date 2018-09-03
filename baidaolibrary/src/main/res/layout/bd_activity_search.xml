@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/BD.AppTheme.Container"
+              android:divider="@drawable/bd_shape_divider_horizontal"
+              android:orientation="vertical"
+              android:showDividers="middle">
+
+    <include layout="@layout/bd_layout_searchbar"/>
+
+    <com.baidaojuhe.library.baidaolibrary.widget.SwipeRecyclerView
+        android:id="@+id/bd_rv_search_content"
+        style="@style/BD.AppTheme.RecyclerView"
+        tools:listitem="@layout/bd_item_simple_array_adapter"/>
+
+</LinearLayout>

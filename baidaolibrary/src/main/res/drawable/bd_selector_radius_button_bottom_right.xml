@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+
+            <corners
+                android:bottomRightRadius="@dimen/sizeRadiusNormal"/>
+
+            <solid android:color="@color/colorGrayButtonPressed"/>
+
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+
+            <corners
+                android:bottomRightRadius="@dimen/sizeRadiusNormal"/>
+
+            <solid android:color="@color/colorGrayButtonNormal"/>
+
+        </shape>
+    </item>
+
+</selector>

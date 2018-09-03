@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             style="@style/BD.AppTheme.Container"
+             android:orientation="vertical">
+
+    <ru.truba.touchgallery.GalleryWidget.GalleryViewPager
+        android:id="@+id/bd_vp_image"
+        style="@style/BD.AppTheme.Container"/>
+
+</FrameLayout>

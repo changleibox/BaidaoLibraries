@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/BD.AppTheme.Container"
+              android:divider="@drawable/bd_shape_divider_horizontal"
+              android:orientation="vertical"
+              android:showDividers="middle">
+
+    <Space style="@style/BD.AppTheme.Divider.Horizontal.Large"/>
+
+    <LinearLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:minHeight="52dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/bd_tv_name"
+            style="@style/BD.AppTheme.TextView.SingleLine"
+            android:paddingLeft="@dimen/sizePaddingNormal"
+            android:paddingRight="@dimen/sizePaddingNormal"
+            android:text="@string/bd_library_name"/>
+
+        <EditText
+            android:id="@+id/bd_et_content"
+            style="@style/BD.AppTheme.EditText"
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:hint=""
+            android:maxLines="6"
+            android:paddingBottom="@dimen/sizePaddingSmall"
+            android:paddingLeft="@dimen/sizePaddingNormal"
+            android:paddingRight="@dimen/sizePaddingNormal"
+            android:paddingTop="@dimen/sizePaddingSmall"
+            tools:text="@string/bd_library_name"/>
+    </LinearLayout>
+
+    <FrameLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:paddingBottom="@dimen/sizePaddingLarge"
+        android:paddingLeft="@dimen/sizePaddingNormal"
+        android:paddingRight="@dimen/sizePaddingNormal"
+        android:paddingTop="@dimen/sizePaddingLarge">
+
+        <include layout="@layout/bd_layout_normal_confirm_button"/>
+    </FrameLayout>
+
+</LinearLayout>

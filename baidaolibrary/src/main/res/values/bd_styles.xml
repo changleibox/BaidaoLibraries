@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="BD.AppTheme.ActionBar.Menu" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu"/>
+
+    <style name="BD.AppTheme.ActionBar.Title" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/sizeTextMedium</item>
+        <item name="android:textColor">@color/colorTextNormal</item>
+    </style>
+
+    <style name="BD.AppTheme.ActionBar.Title.Light" parent="BD.AppTheme.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="BD.AppTheme.ActionBar.Subtitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
+
+    <style name="BD.AppTheme.Toolbar.Button.Navigation" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:scaleType">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <style name="BD.AppTheme.ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleMargin">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="android:paddingStart">@dimen/sizePaddingNormal</item>
+        <item name="android:paddingEnd">@dimen/sizePaddingNormal</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="BD.AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <!-- Customize your theme here. -->
+        <item name="immersiveEnable">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionButtonStyle">@style/BD.AppTheme.ActionButton</item>
+        <item name="toolbarStyle">@style/BD.AppTheme.ToolbarStyle</item>
+        <item name="actionBarSize">@dimen/abc_action_bar_default_height</item>
+        <item name="titleTextStyle">@style/BD.AppTheme.ActionBar.Title</item>
+        <item name="subtitleTextStyle">@style/BD.AppTheme.ActionBar.Subtitle</item>
+        <item name="toolbarNavigationButtonStyle">@style/BD.AppTheme.Toolbar.Button.Navigation
+        </item>
+        <item name="navigationIcon">@drawable/bd_ic_back_black</item>
+        <item name="textAppearanceSuperSmall">@style/BD.AppTheme.TextAppearance.SuperSmall</item>
+        <item name="textAppearanceSuperLarge">@style/BD.AppTheme.TextAppearance.SuperLarge</item>
+        <item name="android:textAppearance">@style/BD.AppTheme.TextAppearance</item>
+        <item name="android:textAppearanceLarge">@style/BD.AppTheme.TextAppearance.Large</item>
+        <item name="android:textAppearanceMedium">@style/BD.AppTheme.TextAppearance.Medium</item>
+        <item name="android:textAppearanceSmall">@style/BD.AppTheme.TextAppearance.Small</item>
+        <item name="android:textAppearanceButton">@style/BD.AppTheme.TextAppearance</item>
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap" tools:targetApi="lollipop">
+            true
+        </item>
+        <item name="android:windowAllowReturnTransitionOverlap" tools:targetApi="lollipop">
+            true
+        </item>
+    </style>
+
+    <style name="BD.AppTheme.NoTitleBar" parent="BD.AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="BD.AppTheme.Immersive" parent="BD.AppTheme.NoTitleBar">
+        <item name="immersiveEnable">true</item>
+        <item name="actionBarElevation">0.5dp</item>
+    </style>
+
+    <!-- ============= -->
+    <!-- Text styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <style name="BD.AppTheme.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/bd_selector_simple_text_color</item>
+        <item name="android:textSize">@dimen/sizeTextNormal</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+    </style>
+
+    <style name="BD.AppTheme.TextAppearance.Gray" parent="BD.AppTheme.TextAppearance">
+        <item name="android:textColor">@color/colorTextGray</item>
+    </style>
+
+    <style name="BD.AppTheme.TextAppearance.Large" parent="BD.AppTheme.TextAppearance">
+        <item name="android:textSize">@dimen/sizeTextLarge</item>
+    </style>
+
+    <style name="BD.AppTheme.TextAppearance.Medium" parent="BD.AppTheme.TextAppearance">
+        <item name="android:textSize">@dimen/sizeTextMedium</item>
+    </style>
+
+    <style name="BD.AppTheme.TextAppearance.Small" parent="BD.AppTheme.TextAppearance">
+        <item name="android:textSize">@dimen/sizeTextSmall</item>
+    </style>
+
+    <style name="BD.AppTheme.TextAppearance.SuperLarge" parent="BD.AppTheme.TextAppearance.Large">
+        <item name="android:textSize">@dimen/sizeTextSuperLarge</item>
+    </style>
+
+    <style name="BD.AppTheme.TextAppearance.SuperSmall" parent="BD.AppTheme.TextAppearance.Small">
+        <item name="android:textSize">@dimen/sizeTextSuperSmall</item>
+    </style>
+
+    <!-- ============= -->
+    <!-- Widget styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <style name="BD.AppTheme.ActionButton" parent="Widget.AppCompat.Light.ActionButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <style name="BD.AppTheme.Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="BD.AppTheme.Container.Layout" parent="BD.AppTheme.Container">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BD.AppTheme.RefreshLayout" parent="BD.AppTheme.Container"/>
+
+    <style name="BD.AppTheme.ScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadingEdge">none</item>
+    </style>
+
+    <style name="BD.AppTheme.RecyclerView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:transcriptMode">normal</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="layoutManager">android.support.v7.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="BD.AppTheme.ImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="BD.AppTheme.ImageButton" parent="BD.AppTheme.ImageView">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="BD.AppTheme.TextView">
+        <item name="android:textAppearance">@style/BD.AppTheme.TextAppearance</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BD.AppTheme.TextView.SingleLine" parent="BD.AppTheme.TextView">
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="BD.AppTheme.Button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textAppearance">@style/BD.AppTheme.TextAppearance</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sizeTextNormal</item>
+        <item name="android:textColor">@color/colorTextNormal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <style name="BD.AppTheme.Button.Small" parent="BD.AppTheme.Button">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="BD.AppTheme.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/sizeDrawablePadding</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textAppearance">?android:textAppearance</item>
+    </style>
+
+    <style name="BD.AppTheme.Divider">
+        <item name="android:background">@color/colorDividerNormal</item>
+    </style>
+
+    <style name="BD.AppTheme.Divider.Vertical" parent="BD.AppTheme.Divider">
+        <item name="android:layout_width">@dimen/sizeDividerNormal</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="BD.AppTheme.Divider.Vertical.Dark" parent="BD.AppTheme.Divider.Vertical">
+        <item name="android:background">@color/colorDividerDark</item>
+    </style>
+
+    <style name="BD.AppTheme.Divider.Horizontal" parent="BD.AppTheme.Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/sizeDividerNormal</item>
+    </style>
+
+    <style name="BD.AppTheme.Divider.Horizontal.Dark" parent="BD.AppTheme.Divider.Horizontal">
+        <item name="android:background">@color/colorDividerDark</item>
+    </style>
+
+    <style name="BD.AppTheme.Divider.Vertical.Large" parent="BD.AppTheme.Divider.Vertical">
+        <item name="android:layout_width">@dimen/sizeDividerLarge</item>
+        <item name="android:background">@color/colorWindowBackground</item>
+    </style>
+
+    <style name="BD.AppTheme.Divider.Horizontal.Large" parent="BD.AppTheme.Divider.Horizontal">
+        <item name="android:layout_height">@dimen/sizeDividerLarge</item>
+        <item name="android:background">@color/colorWindowBackground</item>
+    </style>
+
+    <style name="BD.AppTheme.ItemButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/sizeItemButton</item>
+        <item name="android:paddingStart">@dimen/sizePaddingNormal</item>
+        <item name="android:paddingEnd">@dimen/sizePaddingNormal</item>
+        <item name="drawablePadding">@dimen/sizeItemButtonDrawablePadding</item>
+        <item name="promptTextColor">@color/colorTextNormal</item>
+        <item name="valueTextColor">@color/colorTextGray</item>
+        <item name="promptTextAppearance">@style/BD.AppTheme.TextAppearance</item>
+        <item name="valueTextAppearance">@style/BD.AppTheme.TextAppearance</item>
+        <item name="interval">@dimen/sizeMarginLarge</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="BD.AppTheme.ItemButton.Clickable" parent="BD.AppTheme.ItemButton">
+        <item name="android:clickable">true</item>
+        <item name="valueDrawable">@drawable/bd_ic_arrows_right_black</item>
+        <item name="android:background" tools:ignore="PrivateResource">
+            @drawable/box_tv_click_white
+        </item>
+    </style>
+
+    <style name="BD.AppTheme.Button.Item" parent="BD.AppTheme.Button">
+        <item name="android:background" tools:ignore="PrivateResource">
+            @drawable/box_tv_click_white
+        </item>
+        <item name="android:layout_height">@dimen/sizeItemButtonNormal</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="BD.AppTheme.PictureTitle">
+        <item name="android:minHeight">@dimen/sizeItemButton</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="BD.AppTheme.PictureTitle.Enclosure" parent="BD.AppTheme.TextView">
+        <item name="android:paddingBottom">@dimen/sizePaddingSmall</item>
+    </style>
+
+    <style name="BD.AppTheme.PicturesView" parent="BD.AppTheme.Container.Layout">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingStart">@dimen/sizePaddingNormal</item>
+        <item name="android:paddingEnd">@dimen/sizePaddingNormal</item>
+        <item name="android:paddingBottom">@dimen/sizePaddingNormal</item>
+        <item name="horizontalSpacing">@dimen/sizeDividerLarge</item>
+        <item name="verticalSpacing">@dimen/sizeDividerLarge</item>
+        <item name="titleStyle">@style/BD.AppTheme.PictureTitle</item>
+        <item name="titleTextAppearance">@style/BD.AppTheme.TextAppearance</item>
+        <item name="itemScaleType">centerCrop</item>
+        <item name="itemWHRate">1.0</item>
+        <item name="spanCount">3</item>
+        <item name="limit">-1</item>
+        <item name="hasTitle">true</item>
+    </style>
+
+    <style name="BD.AppTheme.PicturesView.Enclosure" parent="BD.AppTheme.PicturesView">
+        <item name="titleStyle">@style/BD.AppTheme.PictureTitle.Enclosure</item>
+        <item name="spanCount">5</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="BD.AppTheme.Button.Dialog" parent="BD.AppTheme.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">@dimen/sizeDialogButton</item>
+        <item name="android:textSize">@dimen/sizeTextMedium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingLeft">@dimen/sizePaddingNormal</item>
+        <item name="android:paddingRight">@dimen/sizePaddingNormal</item>
+        <item name="android:textColor">@color/colorThemeRed</item>
+    </style>
+
+    <style name="BD.AppTheme.Dialog.Title" parent="BD.AppTheme.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/sizeMarginSmall</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/sizeTextMedium</item>
+    </style>
+
+    <style name="BD.AppTheme.Dialog.Message" parent="BD.AppTheme.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/sizeTextMedium</item>
+    </style>
+
+    <!-- ============= -->
+    <!-- Animation styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <style name="BD.AppTheme.Anim.Translucent" parent="@android:style/Animation.Translucent">
+        <item name="android:windowEnterAnimation">@anim/bd_activity_open_enter</item>
+        <item name="android:windowExitAnimation">@anim/bd_activity_close_exit</item>
+    </style>
+
+    <style name="BD.AppTheme.Anim.Slide.FromBottom" parent="@android:style/Animation.Translucent">
+        <item name="android:windowEnterAnimation">@anim/bd_anim_slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/bd_anim_slide_out_to_bottom</item>
+    </style>
+
+    <style name="BD.AppTheme.Anim.PopupWindow.Background" parent="">
+        <item name="android:windowEnterAnimation">@anim/bd_anim_popup_bg_show</item>
+        <!--<item name="android:windowExitAnimation">@abd_anim_popup_bg_hidehide</item>-->
+    </style>
+
+    <style name="BD.AppTheme.Anim.Modality" parent="Box.Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/bd_anim_slide_in_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/bd_anim_stay</item>
+        <item name="android:activityCloseEnterAnimation">@anim/bd_anim_stay</item>
+        <item name="android:activityCloseExitAnimation">@anim/bd_anim_slide_out_to_bottom</item>
+    </style>
+
+    <!-- ============= -->
+    <!-- Dialog styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <style name="BD.AppTheme.Dialog.Translucent" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--<item name="android:windowFrame">@null</item>-->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="BD.AppTheme.Dialog.Slide.FromBottom" parent="BD.AppTheme.Dialog.Translucent">
+        <item name="android:editTextStyle">@style/BD.AppTheme.EditText</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.BottomSheetDialog</item>
+    </style>
+
+    <!-- ============= -->
+    <!-- Activity styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <style name="BD.AppTheme.CloseNavigationIcon" parent="BD.AppTheme.Immersive">
+        <item name="navigationIcon">@drawable/bd_ic_close</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="BD.AppTheme.Modality" parent="BD.AppTheme.CloseNavigationIcon">
+        <item name="android:windowAnimationStyle">@style/BD.AppTheme.Anim.Modality</item>
+    </style>
+
+    <style name="BD.AppTheme.Search" parent="BD.AppTheme.NoTitleBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="BD.AppTheme.ImagePreview" parent="BD.AppTheme.NoTitleBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
+            @android:color/transparent
+        </item>
+        <item name="android:windowEnterTransition" tools:targetApi="lollipop">
+            @transition/bd_transition_move
+        </item>
+        <item name="android:windowExitTransition" tools:targetApi="lollipop">
+            @transition/bd_transition_move
+        </item>
+        <item name="android:windowSharedElementEnterTransition" tools:targetApi="lollipop">
+            @transition/bd_transition_move
+        </item>
+        <item name="android:windowSharedElementExitTransition" tools:targetApi="lollipop">
+            @transition/bd_transition_move
+        </item>
+    </style>
+
+</resources>

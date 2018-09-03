@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<resources>
+    <declare-styleable name="AppTheme">
+        <!-- ============== -->
+        <!-- Generic styles -->
+        <!-- ============== -->
+        <eat-comment/>
+
+        <attr name="actionBarElevation" format="dimension"/>
+        <attr name="immersiveEnable" format="boolean"/>
+        <attr name="editable" format="boolean"/>
+        <attr name="horizontalSpacing" format="dimension|integer"/>
+        <attr name="verticalSpacing" format="dimension|integer"/>
+        <attr name="menuItemInterval" format="dimension"/>
+        <attr name="title" format="string"/>
+        <attr name="hasTitle" format="boolean"/>
+
+        <attr name="textAppearanceSuperLarge" format="reference"/>
+        <attr name="textAppearanceSuperSmall" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="ItemButton">
+        <attr name="promptTextSize" format="dimension"/>
+        <attr name="valueTextSize" format="dimension"/>
+        <attr name="promptText" format="string"/>
+        <attr name="valueText" format="string"/>
+        <attr name="promptTextColor" format="color"/>
+        <attr name="valueTextColor" format="color"/>
+        <attr name="promptDrawable" format="reference"/>
+        <attr name="valueDrawable" format="reference"/>
+        <attr name="valueGravity" format="enum">
+            <enum name="start" value="0"/>
+            <enum name="end" value="1"/>
+        </attr>
+        <attr name="valueContentGravity" format="enum">
+            <enum name="start" value="0"/>
+            <enum name="end" value="1"/>
+        </attr>
+        <attr name="interval" format="dimension"/>
+        <attr name="promptTextAppearance" format="reference"/>
+        <attr name="valueTextAppearance" format="reference"/>
+        <attr name="drawablePadding" format="dimension"/>
+        <attr name="editable"/>
+        <attr name="android:hint"/>
+        <attr name="android:maxLines"/>
+        <attr name="android:inputType"/>
+        <attr name="android:maxLength"/>
+        <attr name="android:lines"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension"/>
+        <attr name="border_color" format="color"/>
+        <attr name="border_overlay" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="LinkageView">
+        <attr name="maxLevel" format="enum">
+            <enum name="level1" value="1"/>
+            <enum name="level2" value="2"/>
+            <enum name="level3" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="LinkageViewParent_Layout">
+        <attr name="layout_maxHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="PicturesView">
+        <attr name="itemScaleType" format="enum">
+            <enum name="matrix" value="0"/>
+            <enum name="fitXY" value="1"/>
+            <enum name="fitStart" value="2"/>
+            <enum name="fitCenter" value="3"/>
+            <enum name="fitEnd" value="4"/>
+            <enum name="center" value="5"/>
+            <enum name="centerCrop" value="6"/>
+            <enum name="centerInside" value="7"/>
+        </attr>
+        <attr name="title"/>
+        <attr name="android:scaleType"/>
+        <attr name="itemWHRate" format="float"/>
+        <attr name="titleTextAppearance" format="reference"/>
+        <attr name="titleStyle" format="reference"/>
+        <attr name="horizontalSpacing"/>
+        <attr name="verticalSpacing"/>
+        <attr name="spanCount" format="integer"/>
+        <attr name="hasTitle"/>
+        <attr name="limit" format="integer"/>
+        <attr name="editable"/>
+    </declare-styleable>
+</resources>

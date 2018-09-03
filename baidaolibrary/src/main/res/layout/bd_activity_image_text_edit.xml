@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:padding="@dimen/sizePaddingNormal">
+
+    <LinearLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:background="@drawable/bd_shape_border_gray"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/bd_et_content"
+            style="@style/BD.AppTheme.Container.Layout"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="@string/bd_hint_please_input"
+            android:maxLines="10"
+            android:minLines="6"
+            android:padding="@dimen/sizePaddingNormal"
+            android:textAppearance="@style/BD.AppTheme.TextAppearance"
+            android:textColorHint="@color/colorTextHint"/>
+
+        <RelativeLayout
+            style="@style/BD.AppTheme.Container.Layout">
+
+            <com.baidaojuhe.library.baidaolibrary.widget.PicturesView
+                android:id="@+id/bd_picture"
+                style="@style/BD.AppTheme.PicturesView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/bd_tv_count"
+                android:background="@android:color/transparent"
+                android:paddingBottom="@dimen/sizePaddingMedium"
+                android:paddingLeft="@dimen/sizePaddingMedium"
+                android:paddingRight="@dimen/sizePaddingMedium"
+                android:paddingTop="@dimen/sizePaddingMedium"
+                android:visibility="visible"
+                app:hasTitle="false"
+                app:limit="1"
+                app:spanCount="4"/>
+
+            <TextView
+                android:id="@+id/bd_tv_count"
+                style="@style/BD.AppTheme.TextView.SingleLine"
+                android:layout_alignBottom="@+id/bd_picture"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/sizePaddingNormal"
+                android:paddingStart="0dp"
+                android:textColor="@color/colorTextGray"
+                tools:ignore="RtlHardcoded,RtlSymmetry"
+                tools:text="@string/bd_library_name"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:layout_gravity="bottom">
+
+        <include layout="@layout/bd_layout_normal_confirm_button"/>
+    </FrameLayout>
+
+</FrameLayout>

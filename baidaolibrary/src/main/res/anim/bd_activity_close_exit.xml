@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:shareInterpolator="false"
+     android:zAdjustment="top">
+    <alpha
+        android:duration="100"
+        android:fillAfter="true"
+        android:fillBefore="false"
+        android:fillEnabled="true"
+        android:fromAlpha="1.0"
+        android:interpolator="@anim/bd_linear"
+        android:startOffset="100"
+        android:toAlpha="0.0"/>
+    <translate
+        android:duration="250"
+        android:fillAfter="true"
+        android:fillBefore="true"
+        android:fillEnabled="true"
+        android:fromXDelta="0%"
+        android:interpolator="@anim/bd_accelerate_quart"
+        android:toXDelta="8%"/>
+</set>

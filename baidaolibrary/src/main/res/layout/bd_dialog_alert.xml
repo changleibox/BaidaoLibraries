@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/bd_shape_radius_border_white"
+              android:divider="@drawable/bd_shape_divider_horizontal"
+              android:minWidth="@dimen/sizeDialogMinWidth"
+              android:orientation="vertical"
+              android:showDividers="middle">
+
+    <LinearLayout
+        style="@style/BD.AppTheme.Container"
+        android:orientation="vertical"
+        android:padding="@dimen/sizePaddingLarge">
+
+        <TextView
+            android:id="@+id/bd_tv_title"
+            style="@style/BD.AppTheme.Dialog.Title"
+            tools:text="@string/bd_library_name"/>
+
+        <TextView
+            android:id="@+id/bd_tv_message"
+            style="@style/BD.AppTheme.Dialog.Message"
+            tools:text="@string/bd_library_name"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:layout_gravity="center"
+        android:divider="@drawable/bd_shape_divider_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <Button
+            android:id="@+id/bd_btn_negative"
+            style="@style/BD.AppTheme.Button.Dialog"
+            android:background="@drawable/bd_selector_radius_button_bottom_left"
+            android:textColor="@color/colorTextGray"
+            tools:text="@string/bd_library_name"/>
+
+        <Button
+            android:id="@+id/bd_btn_positive"
+            style="@style/BD.AppTheme.Button.Dialog"
+            android:background="@drawable/bd_selector_radius_button_bottom_right"
+            tools:text="@string/bd_library_name"/>
+    </LinearLayout>
+
+</LinearLayout>

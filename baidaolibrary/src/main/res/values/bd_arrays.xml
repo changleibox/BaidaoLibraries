@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<resources>
+    <string-array name="bd_array_camera_album">
+        <item>打开本地相册</item>
+        <item>打开相机</item>
+    </string-array>
+    <string-array name="bd_array_download_menus">
+        <item>保存到相册</item>
+    </string-array>
+</resources>

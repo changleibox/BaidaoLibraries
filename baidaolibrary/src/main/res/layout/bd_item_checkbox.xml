@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/BD.AppTheme.Container.Layout"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              tools:ignore="RtlHardcoded">
+
+    <LinearLayout
+        style="@style/BD.AppTheme.ItemButton"
+        android:background="@drawable/box_tv_click_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="PrivateResource">
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/bd_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/sizeMarginNormal"
+            android:button="@drawable/bd_selector_checkbox_multiselect"
+            android:enabled="false"
+            android:padding="0dp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/bd_tv_name"
+            style="@style/BD.AppTheme.TextView.SingleLine"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:minHeight="40dp"
+            android:textColor="@color/bd_selector_simple_text_color"
+            tools:text="@string/app_name"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bd_divider_bottom"
+        layout="@layout/bd_layout_divider_horizontal"/>
+</LinearLayout>

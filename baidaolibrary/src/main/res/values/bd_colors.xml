@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<resources>
+    <color name="colorWindowBackground">#f5f5f5</color>
+    <color name="colorPrimary">#f9f9f9</color>
+    <color name="colorPrimaryDark">#f9f9f9</color>
+    <color name="colorAccent">@color/colorTheme</color>
+
+    <!-- ============= -->
+    <!-- Theme styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <color name="colorTheme">#048cee</color>
+    <color name="colorThemeBlue">@color/colorTheme</color>
+    <color name="colorThemeRed">#eb433a</color>
+    <color name="colorThemeGreen">#04a12d</color>
+    <color name="colorThemeYellow">#fe9500</color>
+
+    <!-- ============= -->
+    <!-- Text styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <color name="colorTextNormal">#2b2b2b</color>
+    <color name="colorTextDarkGray">#535353</color>
+    <color name="colorTextLightGray">#898989</color>
+    <color name="colorTextGray">#999</color>
+    <color name="colorTextHint">#b8b6be</color>
+
+    <!-- ============= -->
+    <!-- Button styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <color name="colorButtonPressed">#aa048cee</color>
+    <color name="colorButtonDisabled">#ececec</color>
+    <color name="colorButtonNormal">@color/colorTheme</color>
+
+    <color name="colorCleanButton">#eee</color>
+    <color name="colorCleanButtonPressed">#ccc</color>
+
+    <color name="colorGrayButtonNormal">@android:color/white</color>
+    <color name="colorGrayButtonPressed">#ececec</color>
+
+    <!-- ============= -->
+    <!-- Other styles -->
+    <!-- ============= -->
+    <eat-comment/>
+
+    <color name="colorDividerNormal">#e5e5e5</color>
+    <color name="colorDividerDark">#d2d2d2</color>
+    <color name="colorLinkageBackground">#f8f8f8</color>
+    <color name="colorTextSearchButton">#666</color>
+</resources>

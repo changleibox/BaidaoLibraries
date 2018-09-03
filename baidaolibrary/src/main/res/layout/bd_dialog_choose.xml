@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <FrameLayout
+        style="@style/BD.AppTheme.Container.Layout"
+        android:layout_height="44dp"
+        android:background="#eee">
+
+        <Button
+            android:id="@+id/bd_btn_cancel"
+            style="@style/BD.AppTheme.Button"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|end"
+            android:paddingLeft="@dimen/sizePaddingNormal"
+            android:paddingRight="@dimen/sizePaddingNormal"
+            android:text="@string/box_btn_cancel"
+            android:textColor="@color/colorTextGray"/>
+
+        <TextView
+            android:id="@+id/bd_tv_title"
+            style="@style/BD.AppTheme.TextView.SingleLine"
+            android:layout_gravity="center"
+            android:text="@string/bd_library_name"
+            android:textSize="@dimen/sizeTextNormal"/>
+
+        <Button
+            android:id="@+id/bd_btn_confirm"
+            style="@style/BD.AppTheme.Button"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|start"
+            android:paddingLeft="@dimen/sizePaddingNormal"
+            android:paddingRight="@dimen/sizePaddingNormal"
+            android:text="@string/box_btn_sure"
+            android:textColor="@color/colorThemeRed"/>
+    </FrameLayout>
+
+    <View style="@style/BD.AppTheme.Divider.Horizontal"/>
+
+    <FrameLayout
+        android:id="@+id/bd_fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

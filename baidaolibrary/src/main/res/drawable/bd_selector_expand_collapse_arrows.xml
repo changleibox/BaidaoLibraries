@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bd_ic_dropdowm_expand" android:state_selected="true"/>
+    <item android:drawable="@drawable/bd_ic_dropdowm_collapse"/>
+
+</selector>

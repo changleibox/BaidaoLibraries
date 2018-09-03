@@ -1,0 +1,76 @@
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.baidaojuhe.library.baidaolibrary">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application>
+        <activity android:name=".activity.BDShadowActivity"/>
+        <activity
+            android:name=".activity.BDDialogActivity"
+            android:theme="@style/BD.AppTheme.Dialog.Translucent"/>
+        <activity
+            android:name=".activity.BDPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BD.AppTheme.ImagePreview">
+            <intent-filter>
+                <action android:name="${applicationId}.action.PREVIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="${applicationId}"
+                    android:scheme="imagepreview"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.BDImageTextEditActivity"
+            android:label="@string/bd_title_remark"
+            android:screenOrientation="portrait"
+            android:theme="@style/BD.AppTheme.Immersive"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="${applicationId}"
+                    android:path="/imagetext"
+                    android:scheme="edit"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.BDEditTextActivity"
+            android:label="@string/bd_title_edit"
+            android:screenOrientation="portrait"
+            android:theme="@style/BD.AppTheme.Immersive">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="${applicationId}"
+                    android:path="/text"
+                    android:scheme="edit"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.BDWebActivity"
+            android:label="@string/bd_library_name"/>
+    </application>
+</manifest>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/BD.AppTheme.Container.Layout"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bd_btn_item"
+        style="@style/BD.AppTheme.Button.Item"
+        android:layout_width="match_parent"
+        android:background="@drawable/box_tv_click_white"
+        android:gravity="center_vertical"
+        android:minHeight="40dp"
+        android:paddingLeft="@dimen/sizePaddingNormal"
+        android:paddingRight="@dimen/sizePaddingNormal"
+        android:textColor="@color/bd_selector_simple_text_color"
+        tools:text="@string/bd_library_name"/>
+
+    <View
+        android:id="@+id/bd_divider_bottom"
+        style="@style/BD.AppTheme.Divider.Horizontal"
+        android:layout_marginStart="@dimen/sizeMarginNormal"/>
+
+</LinearLayout>

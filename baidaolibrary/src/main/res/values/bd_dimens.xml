@@ -32,4 +32,5 @@
     <dimen name="sizeDialogMinWidth">300dp</dimen>
     <dimen name="sizeLinkage">116dp</dimen>
     <dimen name="sizeDividerBottomMarginLeft">58dp</dimen>
+    <dimen name="sizeBottomButton">40dp</dimen>
 </resources>

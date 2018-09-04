@@ -17,7 +17,6 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.annotation.StyleRes;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatImageView;
 import android.text.Html;
@@ -247,11 +246,11 @@ public class ItemButton extends LinearLayout {
     }
 
     public void setPromptTextAppearance(@StyleRes int textAppearance) {
-        TextViewCompat.setTextAppearance(mTvPrompt, textAppearance);
+        mTvPrompt.setTextAppearance(getContext(), textAppearance);
     }
 
     public void setValueTextAppearance(@StyleRes int textAppearance) {
-        TextViewCompat.setTextAppearance(mTvValue, textAppearance);
+        mTvValue.setTextAppearance(getContext(), textAppearance);
     }
 
     public void setPromptTextColor(@ColorInt int color) {

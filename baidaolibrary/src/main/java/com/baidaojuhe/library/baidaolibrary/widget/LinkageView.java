@@ -35,6 +35,8 @@ import net.box.app.library.adapter.IArrayAdapter;
 import net.box.app.library.helper.IScrollHelper;
 import net.box.app.library.listener.IOnItemClickListener;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +53,7 @@ public class LinkageView extends LinearLayoutCompat {
     public static final int LEVEL_2 = 2;
     public static final int LEVEL_3 = 3;
 
+    @Retention(RetentionPolicy.SOURCE)
     @IntDef({LEVEL_1, LEVEL_2, LEVEL_3})
     public @interface Level {
     }

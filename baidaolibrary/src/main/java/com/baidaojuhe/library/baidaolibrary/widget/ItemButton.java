@@ -38,6 +38,9 @@ import com.baidaojuhe.library.baidaolibrary.R;
 
 import net.box.app.library.compat.IAttrCompat;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 /**
  * Created by box on 2017/3/27.
  * <p>
@@ -57,6 +60,7 @@ public class ItemButton extends LinearLayout {
     private static final InputFilter[] NO_FILTERS = new InputFilter[0];
 
     @SuppressWarnings("unused")
+    @Retention(RetentionPolicy.SOURCE)
     @IntDef({VALUE_START, VALUE_END})
     public @interface ValueGravity {
     }

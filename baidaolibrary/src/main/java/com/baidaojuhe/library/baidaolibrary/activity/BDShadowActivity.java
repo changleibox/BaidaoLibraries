@@ -34,6 +34,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 /**
  * Created by box on 2017/4/11.
@@ -168,6 +170,7 @@ public class BDShadowActivity extends AppCompatActivity {
         }
     }
 
+    @Retention(RetentionPolicy.SOURCE)
     @IntDef({TYPE_CAMERA, TYPE_ALBUM})
     private @interface RequestType {
     }

@@ -11,6 +11,9 @@ import android.widget.Toast;
 import net.box.app.library.helper.IAppHelper;
 import net.box.app.library.util.IToastCompat;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 /**
  * Created by box on 2017/8/8.
  * <p>
@@ -19,6 +22,7 @@ import net.box.app.library.util.IToastCompat;
 
 public class ToastCompat {
 
+    @Retention(RetentionPolicy.SOURCE)
     @IntDef({Toast.LENGTH_SHORT, Toast.LENGTH_LONG})
     private @interface Duration {
     }

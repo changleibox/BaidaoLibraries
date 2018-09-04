@@ -52,7 +52,8 @@ public abstract class BDBaseFragment extends RxFragment implements ContextExtend
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final BDLayout layout = getContainerLayout(getBundle(), savedInstanceState);
+        final Bundle arguments = getArguments();
+        final BDLayout layout = getContainerLayout(arguments == null ? Bundle.EMPTY : arguments, savedInstanceState);
         if (layout != null) {
             return layout.createContentView(inflater, container);
         }
@@ -62,17 +63,20 @@ public abstract class BDBaseFragment extends RxFragment implements ContextExtend
 
     @Override
     public final void initViews(Bundle savedInstanceState) {
-        onInitViews(getBundle(), savedInstanceState);
+        final Bundle arguments = getArguments();
+        onInitViews(arguments == null ? Bundle.EMPTY : arguments, savedInstanceState);
     }
 
     @Override
     public final void initDatas(Bundle savedInstanceState) {
-        onInitDatas(getBundle(), savedInstanceState);
+        final Bundle arguments = getArguments();
+        onInitDatas(arguments == null ? Bundle.EMPTY : arguments, savedInstanceState);
     }
 
     @Override
     public final void initListeners(Bundle savedInstanceState) {
-        onInitListeners(getBundle(), savedInstanceState);
+        final Bundle arguments = getArguments();
+        onInitListeners(arguments == null ? Bundle.EMPTY : arguments, savedInstanceState);
     }
 
     @Override

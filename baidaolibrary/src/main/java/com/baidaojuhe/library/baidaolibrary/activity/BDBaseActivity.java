@@ -39,7 +39,7 @@ public abstract class BDBaseActivity extends RxAppCompatActivity implements Cont
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BDLayout containerLayout = getContainerLayout(getBundle(), savedInstanceState);
+        final BDLayout containerLayout = getContainerLayout(getBundle(), savedInstanceState);
         if (containerLayout != null) {
             containerLayout.setContentView(this);
         }

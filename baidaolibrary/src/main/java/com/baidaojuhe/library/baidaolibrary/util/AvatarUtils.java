@@ -41,6 +41,10 @@ public class AvatarUtils {
     @Nullable
     private static Size sDefaultSize;
 
+    public static void setDefaultSize(@Nullable Size defaultSize) {
+        AvatarUtils.sDefaultSize = defaultSize;
+    }
+
     public static void setDefaultRectAvart(@DrawableRes int defaultRectAvart) {
         AvatarUtils.sDefaultRectAvart = defaultRectAvart;
     }

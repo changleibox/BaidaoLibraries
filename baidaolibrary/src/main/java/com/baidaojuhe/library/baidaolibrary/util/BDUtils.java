@@ -20,7 +20,6 @@ import com.baidaojuhe.library.baidaolibrary.R;
 import com.baidaojuhe.library.baidaolibrary.common.BDConstants;
 import com.baidaojuhe.library.baidaolibrary.compat.ToastCompat;
 
-import net.box.app.library.IAppCompatActivity;
 import net.box.app.library.IContext;
 import net.box.app.library.common.IConstants;
 import net.box.app.library.common.IConstants.IRequestCode;
@@ -208,6 +207,13 @@ public final class BDUtils {
 
     public static boolean isNull(Object obj) {
         return obj == null;
+    }
+
+    public static <T> T checkNotNull(T value, String message) {
+        if (value == null) {
+            throw new NullPointerException(message);
+        }
+        return value;
     }
 
     public static byte[] intToByte(int value) {

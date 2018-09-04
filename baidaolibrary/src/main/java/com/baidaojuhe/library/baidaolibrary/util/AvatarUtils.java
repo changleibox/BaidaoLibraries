@@ -38,6 +38,8 @@ public class AvatarUtils {
 
     private static int sDefaultRectAvart = R.drawable.box_default_avatar_rect;
     private static int sDefaultCircleAvart = R.drawable.box_default_avatar_cricle;
+    @Nullable
+    private static Size sDefaultSize;
 
     public static void setDefaultRectAvart(@DrawableRes int defaultRectAvart) {
         AvatarUtils.sDefaultRectAvart = defaultRectAvart;
@@ -70,6 +72,9 @@ public class AvatarUtils {
         }
         if (transformation != null) {
             creator = creator.transform(transformation);
+        }
+        if (sDefaultSize != null && sDefaultSize.getArea() > 0) {
+            creator = creator.resize(sDefaultSize.getWidth(), sDefaultSize.getHeight()).centerCrop();
         }
         creator.into(imageView);
     }

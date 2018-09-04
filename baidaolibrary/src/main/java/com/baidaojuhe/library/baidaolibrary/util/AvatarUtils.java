@@ -4,6 +4,7 @@
 
 package com.baidaojuhe.library.baidaolibrary.util;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -29,13 +30,25 @@ import java.io.File;
  * 加载头像
  */
 @SuppressWarnings("unused")
+@SuppressLint("PrivateResource")
 public class AvatarUtils {
 
     private static final Transformation TRANSFORMATION = new ICircleTransform((int) IAppHelper.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4));
     private static final Transformation TRANSFORMATION_CIRCLE = new ICircleTransform(ICircleTransform.CIRCLE);
 
+    private static int sDefaultRectAvart = R.drawable.box_default_avatar_rect;
+    private static int sDefaultCircleAvart = R.drawable.box_default_avatar_cricle;
+
+    public static void setDefaultRectAvart(@DrawableRes int defaultRectAvart) {
+        AvatarUtils.sDefaultRectAvart = defaultRectAvart;
+    }
+
+    public static void setDefaultCircleAvart(@DrawableRes int defaultCircleAvart) {
+        AvatarUtils.sDefaultCircleAvart = defaultCircleAvart;
+    }
+
     public static void setRadiusAvatar(String url, ImageView imageView) {
-        setAvatar(url, imageView, R.drawable.box_default_avatar_rect, TRANSFORMATION);
+        setAvatar(url, imageView, sDefaultRectAvart, TRANSFORMATION);
     }
 
     public static void setRectAvatar(String url, ImageView imageView) {
@@ -43,11 +56,12 @@ public class AvatarUtils {
     }
 
     public static void setCircleAvatar(String url, ImageView imageView) {
-        setAvatar(url, imageView, R.drawable.box_default_avatar_cricle, TRANSFORMATION_CIRCLE);
+        setAvatar(url, imageView, sDefaultCircleAvart, TRANSFORMATION_CIRCLE);
     }
 
     private static void setAvatar(@Nullable String url, @NonNull ImageView imageView, @DrawableRes int defaultAvatar, @Nullable Transformation transformation) {
         if (TextUtils.isEmpty(url)) {
+            imageView.setImageResource(defaultAvatar);
             return;
         }
         RequestCreator creator = Picasso.with(IAppHelper.getContext()).load(getPath(url));

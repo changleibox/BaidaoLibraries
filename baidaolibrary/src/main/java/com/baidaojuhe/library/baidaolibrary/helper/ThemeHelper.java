@@ -5,13 +5,13 @@
 package com.baidaojuhe.library.baidaolibrary.helper;
 
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.baidaojuhe.library.baidaolibrary.R;
-import com.baidaojuhe.library.baidaolibrary.activity.BDActionBarActivity;
 import com.baidaojuhe.library.baidaolibrary.widget.IToolbar;
 
 import net.box.app.library.compat.IAttrCompat;
@@ -24,10 +24,10 @@ import net.box.app.library.compat.IAttrCompat;
 
 public class ThemeHelper {
 
-    private BDActionBarActivity mActivity;
+    private AppCompatActivity mActivity;
     private IToolbar mToolbar;
 
-    public ThemeHelper(BDActionBarActivity activity) {
+    public ThemeHelper(AppCompatActivity activity) {
         this.mActivity = activity;
     }
 

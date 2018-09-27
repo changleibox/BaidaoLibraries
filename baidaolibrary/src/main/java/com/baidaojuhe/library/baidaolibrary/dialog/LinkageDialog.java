@@ -91,7 +91,7 @@ public abstract class LinkageDialog extends ChooseDialog {
     public abstract Linkage getDefaultLinkage();
 
     @Nullable
-    abstract List<Linkage> getLinkages();
+    public abstract List<Linkage> getLinkages();
 
     private LinkageView.OnSelectedListener getSelectedListener(OnSelectedListener listener) {
         if (listener == null) {

@@ -93,4 +93,14 @@
         <attr name="limit" format="integer"/>
         <attr name="editable"/>
     </declare-styleable>
+
+    <declare-styleable name="LoadPromptView">
+        <attr name="text" format="string"/>
+        <attr name="drawable" format="color|reference"/>
+        <attr name="mode" format="enum">
+            <enum name="no_data" value="0"/>
+            <enum name="no_network" value="1"/>
+            <enum name="load_failure" value="2"/>
+        </attr>
+    </declare-styleable>
 </resources>

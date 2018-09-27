@@ -4,6 +4,7 @@
 
 <resources>
     <string name="bd_library_name">佰道库</string>
+
     <string name="bd_btn_clean_record">清除记录</string>
     <string name="bd_btn_submit">提交</string>
     <string name="bd_btn_kown">知道了</string>
@@ -22,6 +23,9 @@
     <string name="bd_prompt_file_download_success_to_dir">文件已成功保存到%s文件夹下！</string>
     <string name="bd_prompt_downing_">正在下载…… %1$s</string>
     <string name="bd_prompt_webview_load_failure">网络地址解析失败</string>
+    <string name="bd_prompt_load_failure">加载失败</string>
+    <string name="bd_prompt_no_data">暂无数据</string>
+    <string name="bd_prompt_network_error">网络好像出问题了\n请检查网络</string>
 
     <string name="bd_hint_please_input">请输入</string>
     <string name="bd_hint_search">搜索</string>

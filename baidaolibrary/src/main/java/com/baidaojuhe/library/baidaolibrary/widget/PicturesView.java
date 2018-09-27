@@ -27,6 +27,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.text.method.MovementMethod;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
@@ -257,6 +258,24 @@ public class PicturesView extends LinearLayout {
         hasTitle = true;
         if (mTvTitle != null) {
             mTvTitle.setDuplicateParentStateEnabled(true);
+        }
+    }
+
+    public void setLinkTextColor(int color) {
+        if (mTvTitle != null) {
+            mTvTitle.setLinkTextColor(color);
+        }
+    }
+
+    public void setHighlightColor(int color) {
+        if (mTvTitle != null) {
+            mTvTitle.setHighlightColor(color);
+        }
+    }
+
+    public void setMovementMethod(MovementMethod movement) {
+        if (mTvTitle != null) {
+            mTvTitle.setMovementMethod(movement);
         }
     }
 

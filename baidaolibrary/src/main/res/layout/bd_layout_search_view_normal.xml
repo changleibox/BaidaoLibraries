@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017 CHANGLEI. All rights reserved.
+  -->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:paddingBottom="6dp"
+    android:paddingLeft="@dimen/sizePaddingNormal"
+    android:paddingRight="@dimen/sizePaddingNormal"
+    android:paddingTop="6dp">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/bd_searchview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bd_shape_radius_border_white"
+        android:gravity="center"
+        app:closeIcon="@drawable/box_btn_clean"
+        app:defaultQueryHint="@string/bd_hint_search"
+        app:layout="@layout/bd_layout_search_view"
+        app:measureWithLargestChild="false"
+        app:paddingEnd="0dp"
+        app:paddingStart="0dp"
+        app:queryBackground="@android:color/transparent"
+        app:queryHint="@string/bd_hint_search"
+        app:searchIcon="@drawable/bd_ic_search_black"
+        app:theme="@style/Widget.AppCompat.SearchView"
+        tools:ignore="PrivateResource"/>
+</FrameLayout>

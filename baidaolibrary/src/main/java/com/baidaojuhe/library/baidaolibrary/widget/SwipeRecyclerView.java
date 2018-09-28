@@ -6,6 +6,7 @@ package com.baidaojuhe.library.baidaolibrary.widget;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -59,6 +60,13 @@ public class SwipeRecyclerView extends ISwipeRecyclerView {
 
     public boolean isFirstPage() {
         return getCurrentPage() == BDConfig.FIRST_PAGE;
+    }
+
+    public void setFooterViewBackground(@ColorInt int color) {
+        final View footerView = getFooterView(getContext());
+        if (footerView != null) {
+            footerView.setBackgroundColor(color);
+        }
     }
 
     @Override

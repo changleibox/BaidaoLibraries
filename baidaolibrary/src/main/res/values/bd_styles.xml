@@ -294,6 +294,18 @@
         <item name="android:paddingBottom">0dp</item>
     </style>
 
+    <style name="BD.AppTheme.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="tabIndicatorColor">@color/colorThemeRed</item>
+        <item name="tabIndicatorHeight">1dp</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabTextAppearance">?android:textAppearance</item>
+        <item name="tabSelectedTextColor">@color/colorThemeRed</item>
+        <item name="tabTextColor">@color/colorTextNormal</item>
+    </style>
+
     <style name="BD.AppTheme.Button.Dialog" parent="BD.AppTheme.Button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>

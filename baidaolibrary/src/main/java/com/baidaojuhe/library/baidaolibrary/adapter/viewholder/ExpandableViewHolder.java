@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 
 public abstract class ExpandableViewHolder extends SearchExpandableViewHolder {
 
-    ExpandableViewHolder(@NonNull ViewGroup parent) {
+    public ExpandableViewHolder(@NonNull ViewGroup parent) {
         super(parent);
     }
 

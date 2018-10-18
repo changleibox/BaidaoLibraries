@@ -17,7 +17,7 @@
             android:id="@+id/bd_btn_cancel"
             style="@style/BD.AppTheme.Button"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical|end"
+            android:layout_gravity="center_vertical|start"
             android:paddingLeft="@dimen/sizePaddingNormal"
             android:paddingRight="@dimen/sizePaddingNormal"
             android:text="@string/box_btn_cancel"
@@ -27,14 +27,14 @@
             android:id="@+id/bd_tv_title"
             style="@style/BD.AppTheme.TextView.SingleLine"
             android:layout_gravity="center"
-            android:text="@string/bd_library_name"
+            android:text="@string/app_name"
             android:textSize="@dimen/sizeTextNormal"/>
 
         <Button
             android:id="@+id/bd_btn_confirm"
             style="@style/BD.AppTheme.Button"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical|start"
+            android:layout_gravity="center_vertical|end"
             android:paddingLeft="@dimen/sizePaddingNormal"
             android:paddingRight="@dimen/sizePaddingNormal"
             android:text="@string/box_btn_sure"

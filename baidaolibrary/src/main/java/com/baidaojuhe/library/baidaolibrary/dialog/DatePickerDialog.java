@@ -33,7 +33,7 @@ public class DatePickerDialog extends ChooseDialog {
         super(context);
         setContentView(R.layout.bd_dialog_date_picker);
         mDatePicker = IViewCompat.findById(this, R.id.bd_date_picker);
-        mBtnConfirm.setVisibility(View.VISIBLE);
+        setConfirmVisibility(View.VISIBLE);
         Calendar cal = Calendar.getInstance();
         mDatePicker.setMaxDate(cal.getTimeInMillis());
     }

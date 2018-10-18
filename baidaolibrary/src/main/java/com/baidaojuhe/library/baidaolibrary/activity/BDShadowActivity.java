@@ -83,7 +83,17 @@ public class BDShadowActivity extends AppCompatActivity {
                 });
                 break;
             case TYPE_ALBUM:
-                IAppUtils.openPicture(this, BDRequestCode.REQUEST_CODE_ALBUM);
+                RxPermissions.getInstance(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE).subscribe(aBoolean -> {
+                    if (!aBoolean) {
+                        ToastCompat.showText(R.string.bd_prompt_no_permission);
+                        return;
+                    }
+
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        return;
+                    }
+                    IAppUtils.openPicture(this, BDRequestCode.REQUEST_CODE_ALBUM);
+                });
                 break;
         }
     }

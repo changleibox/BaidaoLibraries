@@ -32,7 +32,6 @@ import com.baidaojuhe.library.baidaolibrary.entity.Linkage;
 import com.baidaojuhe.library.baidaolibrary.util.BDUtils;
 
 import net.box.app.library.adapter.IArrayAdapter;
-import net.box.app.library.helper.IScrollHelper;
 import net.box.app.library.listener.IOnItemClickListener;
 
 import java.lang.annotation.Retention;
@@ -193,7 +192,7 @@ public class LinkageView extends LinearLayoutCompat {
         RecyclerView nextRecyclerView = (RecyclerView) getChildAt(nextLevel);
         Linkage item = adapter.getItem(position);
         if (recyclerView != null && item != null) {
-            new IScrollHelper(recyclerView).moveToPosition(position);
+            recyclerView.scrollToPosition(position);
         }
         if (nextLevel >= mAdapters.size()) {
             performSelected();

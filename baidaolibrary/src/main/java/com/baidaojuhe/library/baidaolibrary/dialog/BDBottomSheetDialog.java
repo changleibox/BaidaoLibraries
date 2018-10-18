@@ -5,7 +5,7 @@
 package com.baidaojuhe.library.baidaolibrary.dialog;
 
 import android.content.Context;
-import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.app.AppCompatDialog;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  */
 
 @SuppressWarnings("WeakerAccess")
-public class BDBottomSheetDialog extends BottomSheetDialog {
+public class BDBottomSheetDialog extends AppCompatDialog {
 
     protected final Context context;
 

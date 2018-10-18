@@ -19,6 +19,7 @@ import android.support.annotation.StyleRes;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatImageView;
+import android.text.Editable;
 import android.text.Html;
 import android.text.InputFilter;
 import android.text.TextUtils;
@@ -317,12 +318,33 @@ public class ItemButton extends LinearLayout {
         mIvValueDrawble.setPadding(drawablePadding, 0, 0, 0);
     }
 
+    public void setHint(CharSequence hint) {
+        mTvValue.setHint(hint);
+    }
+
+    public void setHint(@StringRes int hint) {
+        mTvValue.setHint(hint);
+    }
+
     public void addTextChangedListener(TextWatcher watcher) {
         mTvValue.addTextChangedListener(watcher);
     }
 
     public void removeTextChangedListener(TextWatcher watcher) {
         mTvValue.removeTextChangedListener(watcher);
+    }
+
+    public void setOnValueFocusChangedListener(OnFocusChangeListener l) {
+        mTvValue.setOnFocusChangeListener(l);
+    }
+
+
+    public void setOnEditorActionListener(TextView.OnEditorActionListener l) {
+        mTvValue.setOnEditorActionListener(l);
+    }
+
+    public Editable getEditableText() {
+        return mTvValue.getEditableText();
     }
 
     public CharSequence getValue() {

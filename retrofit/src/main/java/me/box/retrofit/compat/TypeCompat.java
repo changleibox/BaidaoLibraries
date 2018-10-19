@@ -17,6 +17,7 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import me.box.retrofit.entity.Nil;
 import me.box.retrofit.entity.Response;
 
 /**
@@ -47,6 +48,10 @@ public class TypeCompat {
 
     public static boolean isString(Type type) {
         return $Gson$Types.equals(type, String.class);
+    }
+
+    public static boolean isNull(Type type) {
+        return $Gson$Types.equals(type, Nil.class);
     }
 
     @Nullable

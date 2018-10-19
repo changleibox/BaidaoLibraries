@@ -15,6 +15,7 @@ import android.util.Base64;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
+import com.baidaojuhe.library.baidaolibrary.compat.CollectorsCompat;
 import com.baidaojuhe.library.baidaolibrary.util.BDUtils;
 
 import net.box.app.library.helper.IAppHelper;
@@ -71,7 +72,7 @@ public class PrefrenceHelper {
             } catch (IOException ignored) {
             }
             return null;
-        }).filter(value -> !TextUtils.isEmpty(value)).collect(Collectors.toSet()));
+        }).filter(value -> !TextUtils.isEmpty(value)).collect(CollectorsCompat.toLinkedHashSet()));
     }
 
     public <T extends Serializable> List<T> getSerializables(String key) {
@@ -87,12 +88,38 @@ public class PrefrenceHelper {
         return list;
     }
 
+    public <T extends Serializable> void putSerializable(String key, T objects) {
+        try {
+            put(key, serializableToBase64(objects));
+        } catch (IOException ignored) {
+        }
+    }
+
+    @Nullable
+    public <T extends Serializable> T getSerializable(String key) {
+        try {
+            //noinspection unchecked
+            return (T) base64ToSerializable(get(key, (String) null));
+        } catch (IOException ignored) {
+        } catch (ClassNotFoundException ignored) {
+        }
+        return null;
+    }
+
     public <T extends Parcelable> void putParcelables(String key, List<T> objects) {
         put(key, Stream.of(objects).map(PrefrenceHelper::parcelableToBase64).collect(Collectors.toSet()));
     }
 
     public <T extends Parcelable> List<T> getParcelables(String key, Parcelable.Creator<T> creator) {
         return Stream.of(get(key)).map(value -> base64ToParcelable(value, creator)).collect(Collectors.toList());
+    }
+
+    public <T extends Parcelable> void putParcelable(String key, T objects) {
+        put(key, parcelableToBase64(objects));
+    }
+
+    public <T extends Parcelable> T getParcelable(String key, Parcelable.Creator<T> creator) {
+        return base64ToParcelable(get(key, (String) null), creator);
     }
 
     public void remove(String key) {

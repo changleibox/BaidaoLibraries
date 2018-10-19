@@ -15,10 +15,11 @@ import android.util.Base64;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
-import com.baidaojuhe.library.baidaolibrary.compat.CollectorsCompat;
 import com.baidaojuhe.library.baidaolibrary.util.BDUtils;
+import com.google.gson.reflect.TypeToken;
 
 import net.box.app.library.helper.IAppHelper;
+import net.box.app.library.util.IJsonDecoder;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -65,6 +66,10 @@ public class PrefrenceHelper {
         mPreferences.edit().putStringSet(key, set).apply();
     }
 
+    public void put(String key, List<String> set) {
+        mPreferences.edit().putString(key, IJsonDecoder.objectToJson(set)).apply();
+    }
+
     public <T extends Serializable> void putSerializables(String key, List<T> objects) {
         put(key, Stream.of(objects).map(value -> {
             try {
@@ -72,13 +77,13 @@ public class PrefrenceHelper {
             } catch (IOException ignored) {
             }
             return null;
-        }).filter(value -> !TextUtils.isEmpty(value)).collect(CollectorsCompat.toLinkedHashSet()));
+        }).filter(value -> !TextUtils.isEmpty(value)).collect(Collectors.toList()));
     }
 
     public <T extends Serializable> List<T> getSerializables(String key) {
         List<T> list = new ArrayList<>();
         //noinspection unchecked
-        Stream.of(get(key)).map(value -> {
+        Stream.of(get(key, new ArrayList<>())).map(value -> {
             try {
                 return base64ToSerializable(value);
             } catch (IOException | ClassNotFoundException ignored) {
@@ -107,11 +112,11 @@ public class PrefrenceHelper {
     }
 
     public <T extends Parcelable> void putParcelables(String key, List<T> objects) {
-        put(key, Stream.of(objects).map(PrefrenceHelper::parcelableToBase64).collect(CollectorsCompat.toLinkedHashSet()));
+        put(key, Stream.of(objects).map(PrefrenceHelper::parcelableToBase64).collect(Collectors.toList()));
     }
 
     public <T extends Parcelable> List<T> getParcelables(String key, Parcelable.Creator<T> creator) {
-        return Stream.of(get(key)).map(value -> base64ToParcelable(value, creator)).collect(Collectors.toList());
+        return Stream.of(get(key, new ArrayList<>())).map(value -> base64ToParcelable(value, creator)).collect(Collectors.toList());
     }
 
     public <T extends Parcelable> void putParcelable(String key, T objects) {
@@ -152,6 +157,14 @@ public class PrefrenceHelper {
 
     public Set<String> get(String key, @Nullable Set<String> defValues) {
         return mPreferences.getStringSet(key, defValues == null ? new ArraySet<>() : defValues);
+    }
+
+    public List<String> get(String key, @Nullable List<String> defValues) {
+        final String json = mPreferences.getString(key, null);
+        if (TextUtils.isEmpty(json)) {
+            return defValues;
+        }
+        return IJsonDecoder.jsonToObject(json, new TypeToken<List<String>>(){}.getType());
     }
 
     public Set<String> get(String key) {

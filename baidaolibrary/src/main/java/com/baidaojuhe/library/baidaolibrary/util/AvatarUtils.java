@@ -70,7 +70,7 @@ public class AvatarUtils {
             imageView.setImageResource(defaultAvatar);
             return;
         }
-        RequestCreator creator = Picasso.with(IAppHelper.getContext()).load(getPath(url));
+        RequestCreator creator = new Picasso.Builder(imageView.getContext()).build().load(getPath(url));
         if (defaultAvatar != 0) {
             creator = creator.placeholder(defaultAvatar).error(defaultAvatar);
         }

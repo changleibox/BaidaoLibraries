@@ -118,7 +118,7 @@ public class ImageLoader {
     }
 
     private static RequestCreator getCreator(Context context, @NonNull String path, @DrawableRes int defImage, @Nullable Transformation transformation) {
-        Picasso picasso = Picasso.with(context);
+        Picasso picasso = new Picasso.Builder(context).build();
         // Picasso.setSingletonInstance(picasso);
         RequestCreator creator;
         if (IAppUtils.isNetPath(path)) {
@@ -199,7 +199,7 @@ public class ImageLoader {
         if (TextUtils.isEmpty(avatar)) {
             return null;
         }
-        RequestCreator creator = Picasso.with(iContext.getActivity()).load(avatar);
+        RequestCreator creator = new Picasso.Builder(iContext.getActivity()).build().load(avatar);
         if (defAvatar != 0) {
             creator = creator.placeholder(defAvatar).error(defAvatar);
         }

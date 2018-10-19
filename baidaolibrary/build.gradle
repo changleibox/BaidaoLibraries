@@ -67,7 +67,7 @@ dependencies {
     api 'com.annimon:stream:1.1.4'
     api 'me.tatarka:gradle-retrolambda:3.4.0'
     // 自己的框架
-    api 'me.box.library:boxlibrary:1.5.3'
+    api 'me.box.library:boxlibrary:1.5.5'
     // RxJava
     api 'io.reactivex:rxjava:1.2.4'
     api 'io.reactivex:rxandroid:1.2.1'

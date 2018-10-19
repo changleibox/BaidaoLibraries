@@ -107,7 +107,7 @@ public class PrefrenceHelper {
     }
 
     public <T extends Parcelable> void putParcelables(String key, List<T> objects) {
-        put(key, Stream.of(objects).map(PrefrenceHelper::parcelableToBase64).collect(Collectors.toSet()));
+        put(key, Stream.of(objects).map(PrefrenceHelper::parcelableToBase64).collect(CollectorsCompat.toLinkedHashSet()));
     }
 
     public <T extends Parcelable> List<T> getParcelables(String key, Parcelable.Creator<T> creator) {

@@ -148,4 +148,16 @@ public class BDImageTextEditActivity extends BDModalityActivity implements TextW
     protected ArrayList<String> getImages() {
         return new ArrayList<>(mPicturesView.getPicturePaths());
     }
+
+    protected void setImageLimit(int limit) {
+        mPicturesView.setLimit(limit);
+    }
+
+    protected void setOnFileCallback(PicturesView.Callback fileCallback) {
+        mPicturesView.setOnFileCallback(fileCallback);
+    }
+
+    protected void setOnFileRemoveCallback(PicturesView.RemoveCallback removeCallback) {
+        mPicturesView.setOnFileRemoveCallback(removeCallback);
+    }
 }

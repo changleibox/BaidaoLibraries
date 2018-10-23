@@ -160,4 +160,8 @@ public class BDImageTextEditActivity extends BDModalityActivity implements TextW
     protected void setOnFileRemoveCallback(PicturesView.RemoveCallback removeCallback) {
         mPicturesView.setOnFileRemoveCallback(removeCallback);
     }
+
+    protected PicturesView getPicturesView() {
+        return mPicturesView;
+    }
 }

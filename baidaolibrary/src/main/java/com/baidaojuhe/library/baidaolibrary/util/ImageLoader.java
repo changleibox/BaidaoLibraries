@@ -118,7 +118,7 @@ public class ImageLoader {
     }
 
     private static RequestCreator getCreator(Context context, @NonNull String path, @DrawableRes int defImage, @Nullable Transformation transformation) {
-        Picasso picasso = new Picasso.Builder(context).build();
+        Picasso picasso = Picasso.get();
         // Picasso.setSingletonInstance(picasso);
         RequestCreator creator;
         if (IAppUtils.isNetPath(path)) {

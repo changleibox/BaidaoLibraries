@@ -4,6 +4,7 @@
 
 package com.baidaojuhe.library.baidaolibrary.widget;
 
+import android.app.Activity;
 import android.content.Context;
 
 import net.box.app.library.widget.IProgress;
@@ -28,7 +29,11 @@ public class Progress extends IProgress implements RetrofitProgressImpl {
     @Override
     public void show() {
         try {
-            if (!isShowing()) {
+            Activity activity = null;
+            if (getContext() instanceof Activity) {
+                activity = (Activity) getContext();
+            }
+            if (!isShowing() && (activity == null || (!activity.isFinishing() && !activity.isDestroyed()))) {
                 super.show();
             }
         } catch (Exception ignored) {

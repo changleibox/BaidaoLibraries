@@ -109,8 +109,14 @@ public abstract class BDAnswerActivity extends BDBaseActivity implements Observe
         mAnswerAdapter.set(answers);
         if (mSelectedAnswers != null) {
             mAnswerAdapter.setSelectedItems(Stream.of(mSelectedAnswers)
-                    .map(Answer::new)
-                    .filter(mAllAnswers::contains)
+                    .map(naireQuestion -> {
+                        final Answer answer = new Answer(naireQuestion);
+                        final int index = mAllAnswers.indexOf(answer);
+                        if (index != -1 && index < mAllAnswers.size()) {
+                            return mAllAnswers.get(index);
+                        }
+                        return answer;
+                    }).filter(mAllAnswers::contains)
                     .collect(Collectors.toList()));
         }
     }

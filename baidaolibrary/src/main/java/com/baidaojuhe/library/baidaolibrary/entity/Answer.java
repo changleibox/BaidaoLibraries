@@ -88,7 +88,7 @@ public class Answer implements Parcelable {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Answer && ((id != null && ((Answer) obj).id.equals(id)) || TextUtils.equals(((Answer) obj).getTmpContent(), getTmpContent()));
+        return obj instanceof Answer && (id != null && (id.equals(((Answer) obj).id)) || TextUtils.equals(((Answer) obj).getTmpContent(), getTmpContent()));
     }
 
     public Answer() {

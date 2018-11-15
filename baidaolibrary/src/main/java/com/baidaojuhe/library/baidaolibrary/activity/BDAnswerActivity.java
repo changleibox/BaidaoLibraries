@@ -78,12 +78,8 @@ public abstract class BDAnswerActivity extends BDBaseActivity implements Observe
         return BDLayout.create(R.layout.bd_activity_answer);
     }
 
-    protected List<Answer> getSeletedItems() {
-        return mSelectedHelper.getSelectedItems();
-    }
-
     protected ArrayList<NaireQuestion> getSelectedAnswers() {
-        return new ArrayList<>(Stream.of(getSeletedItems()).filter(BDUtils::nonNull)
+        return new ArrayList<>(Stream.of(getSelectedItems()).filter(BDUtils::nonNull)
                 .map(answer -> new NaireQuestion(answer.getTmpContent())).collect(Collectors.toList()));
     }
 

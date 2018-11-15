@@ -33,7 +33,7 @@ public class Answer implements Parcelable {
     @SerializedName("list")
     private List<Answer> childs;
 
-    transient private String tmpContent;
+    private String tmpContent;
 
     public Answer(String content) {
         this.content = content;
@@ -105,6 +105,7 @@ public class Answer implements Parcelable {
         dest.writeString(this.parentId);
         dest.writeString(this.content);
         dest.writeTypedList(this.childs);
+        dest.writeString(this.tmpContent);
     }
 
     protected Answer(Parcel in) {
@@ -112,6 +113,7 @@ public class Answer implements Parcelable {
         this.parentId = in.readString();
         this.content = in.readString();
         this.childs = in.createTypedArrayList(Answer.CREATOR);
+        this.tmpContent = in.readString();
     }
 
     public static final Creator<Answer> CREATOR = new Creator<Answer>() {

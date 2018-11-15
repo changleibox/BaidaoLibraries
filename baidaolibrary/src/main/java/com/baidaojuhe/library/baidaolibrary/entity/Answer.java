@@ -10,7 +10,6 @@ import android.text.TextUtils;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +27,7 @@ public class Answer implements Parcelable {
      * list : [{"id":5,"parentId":"1","content":"四居"}]
      */
 
-    private int id;
+    private String id;
     private String parentId;
     private String content;
     @SerializedName("list")
@@ -47,11 +46,11 @@ public class Answer implements Parcelable {
         this.tmpContent = questionName;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -89,7 +88,10 @@ public class Answer implements Parcelable {
 
     @Override
     public boolean equals(Object obj) {
-        return obj != null && obj instanceof Answer && ((id != 0 && ((Answer) obj).id == id) || TextUtils.equals(((Answer) obj).getTmpContent(), getTmpContent()));
+        return obj instanceof Answer && ((id != null && ((Answer) obj).id.equals(id)) || TextUtils.equals(((Answer) obj).getTmpContent(), getTmpContent()));
+    }
+
+    public Answer() {
     }
 
     @Override
@@ -99,21 +101,17 @@ public class Answer implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
+        dest.writeString(this.id);
         dest.writeString(this.parentId);
         dest.writeString(this.content);
-        dest.writeList(this.childs);
+        dest.writeTypedList(this.childs);
     }
 
-    public Answer() {
-    }
-
-    private Answer(Parcel in) {
-        this.id = in.readInt();
+    protected Answer(Parcel in) {
+        this.id = in.readString();
         this.parentId = in.readString();
         this.content = in.readString();
-        this.childs = new ArrayList<>();
-        in.readList(this.childs, Answer.class.getClassLoader());
+        this.childs = in.createTypedArrayList(Answer.CREATOR);
     }
 
     public static final Creator<Answer> CREATOR = new Creator<Answer>() {

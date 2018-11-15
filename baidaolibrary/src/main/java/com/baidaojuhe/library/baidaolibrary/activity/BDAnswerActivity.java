@@ -78,12 +78,15 @@ public abstract class BDAnswerActivity extends BDBaseActivity implements Observe
         return BDLayout.create(R.layout.bd_activity_answer);
     }
 
-    protected void onConfirmClicked(View v) {
-        final ArrayList<NaireQuestion> selectedAnswers = new ArrayList<>(Stream.of(mSelectedHelper
+    protected ArrayList<NaireQuestion> getSelectedAnswers() {
+        return new ArrayList<>(Stream.of(mSelectedHelper
                 .getSelectedItems()).filter(BDUtils::nonNull)
                 .map(answer -> new NaireQuestion(answer.getTmpContent())).collect(Collectors.toList()));
+    }
+
+    protected void onConfirmClicked(View v) {
         Intent intent = new Intent();
-        intent.putParcelableArrayListExtra(BDKey.KEY_SELECTED_ANSWERS, selectedAnswers);
+        intent.putParcelableArrayListExtra(BDKey.KEY_SELECTED_ANSWERS, getSelectedAnswers());
         setResult(RESULT_OK, intent);
         finish();
     }

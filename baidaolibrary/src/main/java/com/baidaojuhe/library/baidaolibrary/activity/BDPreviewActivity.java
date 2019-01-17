@@ -89,7 +89,7 @@ public class BDPreviewActivity extends BDActionBarActivity implements View.OnCli
 
     @Override
     public void onInitDatas(@NonNull Bundle arguments, Bundle savedInstanceState) {
-        String[] imagePaths;
+        String[] imagePaths = null;
 
         Uri uri = getIntent().getData();
         String imagePreviewScheme = "imagepreview";
@@ -103,7 +103,9 @@ public class BDPreviewActivity extends BDActionBarActivity implements View.OnCli
             }
             List<String> pathList = IJsonDecoder.jsonToObject(paths, new TypeToken<List<String>>() {
             }.getType());
-            imagePaths = pathList.toArray(new String[pathList.size()]);
+            if (pathList != null) {
+                imagePaths = pathList.toArray(new String[0]);
+            }
             mStartPosition = Integer.valueOf(uri.getQueryParameter(BDKey.KEY_CURRENT_POSITION));
         } else {
             imagePaths = getBundle().getStringArray(BDKey.KEY_IMAGE_PATHS);

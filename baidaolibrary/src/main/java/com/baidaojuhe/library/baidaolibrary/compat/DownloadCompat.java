@@ -5,6 +5,7 @@
 package com.baidaojuhe.library.baidaolibrary.compat;
 
 import android.Manifest;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresPermission;
 
@@ -64,7 +65,8 @@ public class DownloadCompat {
             }
             return;
         }
-        DownloadUtils utils = new DownloadUtils(null, specialCallback);
+        final Uri uri = Uri.parse(url);
+        DownloadUtils utils = new DownloadUtils(uri.getScheme() + "://" + uri.getHost() + "/", specialCallback);
         utils.download(url, temporaryFile, new Subscriber<File>() {
             @Override
             public void onCompleted() {

@@ -5,7 +5,6 @@
 package com.baidaojuhe.library.baidaolibrary.util;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import net.box.app.library.helper.IAppHelper;
 
@@ -45,7 +44,7 @@ public class DownloadUtils {
     private static final int DEFAULT_TIMEOUT = 15;
     public Retrofit mRetrofit;
 
-    public DownloadUtils(@Nullable String baseUrl, DownloadProgressListener listener) {
+    public DownloadUtils(@NonNull String baseUrl, DownloadProgressListener listener) {
         DownloadProgressInterceptor interceptor = new DownloadProgressInterceptor(listener);
 
         OkHttpClient client = new OkHttpClient.Builder()
@@ -83,7 +82,7 @@ public class DownloadUtils {
         }
 
         @Override
-        public Response intercept(Chain chain) throws IOException {
+        public Response intercept(@NonNull Chain chain) throws IOException {
             Response originalResponse = chain.proceed(chain.request());
 
             return originalResponse.newBuilder()
@@ -127,7 +126,7 @@ public class DownloadUtils {
                 long totalBytesRead = 0L;
 
                 @Override
-                public long read(Buffer sink, long byteCount) throws IOException {
+                public long read(@NonNull Buffer sink, long byteCount) throws IOException {
                     long bytesRead = super.read(sink, byteCount);
                     // read() returns the number of bytes read, or -1 if this source is exhausted.
                     totalBytesRead += bytesRead != -1 ? bytesRead : 0;

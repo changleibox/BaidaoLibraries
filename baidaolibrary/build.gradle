@@ -67,7 +67,7 @@ dependencies {
     api 'com.annimon:stream:1.1.4'
     api 'me.tatarka:gradle-retrolambda:3.4.0'
     // 自己的框架
-    api 'me.box.library:boxlibrary:1.5.5'
+    api 'me.box.library:boxlibrary:1.5.7'
     // RxJava
     api 'io.reactivex:rxjava:1.2.4'
     api 'io.reactivex:rxandroid:1.2.1'
@@ -75,7 +75,7 @@ dependencies {
     api 'com.trello:rxlifecycle-components:0.6.1'
     api 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
     // Retrofit2
-    //noinspection GradleDependency
+    // noinspection GradleDependency
     api 'com.squareup.retrofit2:retrofit:2.2.0'
     //noinspection GradleDependency
     api 'com.squareup.retrofit2:converter-gson:2.1.0'

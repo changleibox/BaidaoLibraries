@@ -6,6 +6,8 @@ package com.baidaojuhe.library.baidaolibrary.dialog;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatDialog;
+import android.view.Gravity;
+import android.view.Window;
 
 import butterknife.ButterKnife;
 
@@ -19,18 +21,28 @@ public abstract class BaseDialog extends AppCompatDialog {
 
     public BaseDialog(Context context) {
         super(context);
+        init();
     }
 
     public BaseDialog(Context context, int theme) {
         super(context, theme);
+        init();
     }
 
     protected BaseDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
+        init();
     }
 
     @Override
     public void onContentChanged() {
         ButterKnife.bind(this);
+    }
+
+    private void init() {
+        final Window window = getWindow();
+        if (window != null) {
+            window.setGravity(Gravity.CENTER);
+        }
     }
 }

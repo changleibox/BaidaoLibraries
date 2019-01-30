@@ -6,6 +6,8 @@ package com.baidaojuhe.library.baidaolibrary.widget;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.Gravity;
+import android.view.Window;
 
 import net.box.app.library.widget.IProgress;
 
@@ -20,10 +22,12 @@ public class Progress extends IProgress implements RetrofitProgressImpl {
 
     public Progress(Context context) {
         super(context);
+        init();
     }
 
     public Progress(Context context, int theme) {
         super(context, theme);
+        init();
     }
 
     @Override
@@ -37,6 +41,13 @@ public class Progress extends IProgress implements RetrofitProgressImpl {
                 super.show();
             }
         } catch (Exception ignored) {
+        }
+    }
+
+    private void init() {
+        final Window window = getWindow();
+        if (window != null) {
+            window.setGravity(Gravity.CENTER);
         }
     }
 }

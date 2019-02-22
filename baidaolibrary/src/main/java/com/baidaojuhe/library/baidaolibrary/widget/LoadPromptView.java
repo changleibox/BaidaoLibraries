@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
-import android.support.annotation.IntDef;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -16,6 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.baidaojuhe.library.baidaolibrary.R;
+import com.baidaojuhe.library.baidaolibrary.impl.LoadPromptImpl;
 
 import net.box.app.library.util.IAppUtils;
 import net.box.app.library.util.IViewDrawable;
@@ -25,16 +25,7 @@ import me.box.retrofit.exception.HttpException;
 /**
  * 显示加载提示
  */
-public class LoadPromptView extends FrameLayout {
-
-    public static final int MODE_SUCCESS = -1;
-    public static final int MODE_NO_DATA = 0;
-    public static final int MODE_NO_NETWORK = 1;
-    public static final int MODE_LOAD_FAILURE = 2;
-
-    @IntDef({MODE_SUCCESS, MODE_NO_DATA, MODE_NO_NETWORK, MODE_LOAD_FAILURE})
-    private @interface Mode {
-    }
+public class LoadPromptView extends FrameLayout implements LoadPromptImpl {
 
     private TextView mTvPrompt;
 
@@ -83,24 +74,29 @@ public class LoadPromptView extends FrameLayout {
         }
     }
 
+    @Override
     public void setPromptText(CharSequence text) {
         setVisibility(VISIBLE);
         mTvPrompt.setText(text);
     }
 
+    @Override
     public void setPromptText(@StringRes int text) {
         setPromptText(getContext().getText(text));
     }
 
+    @Override
     public void setPromptDrawable(Drawable drawable) {
         setVisibility(VISIBLE);
         mTvPrompt.setCompoundDrawables(null, drawable, null, null);
     }
 
+    @Override
     public void setPromptDrawable(@DrawableRes int drawable) {
         setPromptDrawable(IViewDrawable.getDrawable(getContext(), drawable));
     }
 
+    @Override
     public void setMode(@Mode int mode) {
         switch (mode) {
             case MODE_SUCCESS:
@@ -129,10 +125,12 @@ public class LoadPromptView extends FrameLayout {
         }
     }
 
+    @Override
     public void setSuccess() {
         setVisibility(GONE);
     }
 
+    @Override
     public void setError(Throwable e, boolean isFirstPage) {
         if (!isFirstPage) {
             return;

@@ -71,11 +71,13 @@ public class BDShadowActivity extends AppCompatActivity {
                 RxPermissions.getInstance(this).request(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE).subscribe(aBoolean -> {
                     if (!aBoolean) {
                         ToastCompat.showText(R.string.bd_prompt_no_permission);
+                        finish();
                         return;
                     }
 
                     boolean isFontCamera = getIntent().getBooleanExtra(BDKey.KEY_FONT_CAMERA, false);
                     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        finish();
                         return;
                     }
                     IAppUtils.openCamera(this, BDRequestCode.REQUEST_CODE_CAMERA, isFontCamera, mSdcardTempFile);
@@ -86,10 +88,12 @@ public class BDShadowActivity extends AppCompatActivity {
                 RxPermissions.getInstance(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE).subscribe(aBoolean -> {
                     if (!aBoolean) {
                         ToastCompat.showText(R.string.bd_prompt_no_permission);
+                        finish();
                         return;
                     }
 
                     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        finish();
                         return;
                     }
                     IAppUtils.openPicture(this, BDRequestCode.REQUEST_CODE_ALBUM);

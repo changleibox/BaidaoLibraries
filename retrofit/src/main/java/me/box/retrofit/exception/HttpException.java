@@ -4,6 +4,7 @@
 
 package me.box.retrofit.exception;
 
+import android.support.annotation.Nullable;
 import android.util.SparseArray;
 
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class HttpException extends IOException {
     public static final int CODE_TOKEN_INVALID = 401;
 
     private final int code;
+    private final String value;
 
     public HttpException(Error error) {
         this(error.message, error.code);
@@ -43,20 +45,33 @@ public class HttpException extends IOException {
     public HttpException(String msg, int code) {
         super(getMessage(code, msg));
         this.code = code;
+        this.value = null;
     }
 
     public HttpException(String msg, int code, Throwable cause) {
         super(msg, cause);
         this.code = code;
+        this.value = null;
+    }
+
+    public HttpException(String msg, int code, String value) {
+        super(getMessage(code, msg));
+        this.code = code;
+        this.value = value;
     }
 
     public int getCode() {
         return code;
     }
 
+    @Nullable
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj) || (obj != null && obj instanceof HttpException && ((HttpException) obj).getCode() == getCode());
+        return super.equals(obj) || (obj instanceof HttpException && ((HttpException) obj).getCode() == getCode());
     }
 
     public boolean equals(HttpException e) {
@@ -68,7 +83,7 @@ public class HttpException extends IOException {
     }
 
     public static boolean equals(Throwable e1, int code) {
-        return e1 != null && e1 instanceof HttpException && ((HttpException) e1).equals(code);
+        return e1 instanceof HttpException && ((HttpException) e1).equals(code);
     }
 
     public static boolean equals(Throwable e1, HttpException e2) {
@@ -81,7 +96,7 @@ public class HttpException extends IOException {
     }
 
     public static boolean isNotData(Throwable e) {
-        return e != null && e instanceof HttpException && ((HttpException) e).equals(CODE_NOT_DATA);
+        return e instanceof HttpException && ((HttpException) e).equals(CODE_NOT_DATA);
     }
 
     public static boolean isNetworkError(Throwable e) {

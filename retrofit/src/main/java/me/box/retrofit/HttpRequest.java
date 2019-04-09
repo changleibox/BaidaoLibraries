@@ -70,11 +70,11 @@ public class HttpRequest {
 
     public <T> Subscriber<T> request(@Nullable RetrofitContext iContext, @NonNull Observable<T> observable, @Nullable Observer<T> observer) {
         Subscriber<T> subscriber;
-        if (observer != null && observer instanceof LoadSubscriber) {
+        if (observer instanceof LoadSubscriber) {
             subscriber = (LoadSubscriber<T>) observer;
         } else if (iContext != null) {
             subscriber = new LoadSubscriber<>(iContext, observer);
-        } else if (observer != null && observer instanceof Subscriber) {
+        } else if (observer instanceof Subscriber) {
             subscriber = (Subscriber<T>) observer;
         } else {
             subscriber = HttpUtils.convertToSubscriber(observer);

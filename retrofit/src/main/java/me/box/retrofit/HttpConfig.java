@@ -27,7 +27,7 @@ import rx.subscriptions.CompositeSubscription;
  * 网络请求配置
  */
 
-@SuppressWarnings({"WeakerAccess", "SameParameterValue"})
+@SuppressWarnings({"WeakerAccess", "SameParameterValue", "unused"})
 public abstract class HttpConfig {
 
     protected HttpConfig() {
@@ -57,12 +57,12 @@ public abstract class HttpConfig {
     }
 
     protected static <T> Subscriber<T> request(@Nullable RetrofitContext iContext, HttpRequest request, @NonNull Observable<T> observable, @Nullable Observer<T> observer, boolean isShowPrompt) {
-        if (iContext != null && iContext instanceof LifecycleImpl) {
+        if (iContext instanceof LifecycleImpl) {
             observable = observable.compose(((LifecycleImpl) iContext).bindToLifecycle());
         }
         Subscriber<T> subscriber = request.request(iContext, observable, new ISubscriber<>(observer, isShowPrompt));
         CompositeSubscription subscription;
-        if (iContext != null && iContext instanceof LifecycleImpl && (subscription = ((LifecycleImpl) iContext).getCompositeSubscription()) != null) {
+        if (iContext instanceof LifecycleImpl && (subscription = ((LifecycleImpl) iContext).getCompositeSubscription()) != null) {
             subscription.add(subscriber);
         }
         return subscriber;

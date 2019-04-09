@@ -80,7 +80,7 @@ public class HttpUtils {
                 }
             }
         };
-        if (observer != null && observer instanceof Subscriber) {
+        if (observer instanceof Subscriber) {
             subscriber.add(new Subscription() {
                 @Override
                 public void unsubscribe() {

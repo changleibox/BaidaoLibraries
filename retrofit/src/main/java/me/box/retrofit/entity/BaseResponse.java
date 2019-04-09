@@ -17,7 +17,7 @@ public class BaseResponse {
     private static final int SUCCESS_CODE = 200;
 
     private int code;
-    private String msg;
+    private String message;
 
     public int getCode() {
         int code = HttpException.ERROR_OTHER.getCode();
@@ -33,11 +33,11 @@ public class BaseResponse {
     }
 
     public String getMsg() {
-        return msg;
+        return message;
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
+        this.message = msg;
     }
 
     public boolean isSuccess() {

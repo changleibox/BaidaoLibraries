@@ -12,7 +12,7 @@ package me.box.retrofit.entity;
 public final class Nil {
 
     /*
-     * The Void class cannot be instantiated.
+     * The Nil class cannot be instantiated.
      */
     private Nil() {
     }

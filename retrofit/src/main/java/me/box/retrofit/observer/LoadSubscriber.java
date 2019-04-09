@@ -39,7 +39,7 @@ public class LoadSubscriber<T> extends Subscriber<T> implements DialogInterface.
         this.mIContext = iContext;
         this.mObserver = observer;
 
-        if (observer != null && observer instanceof Subscriber) {
+        if (observer instanceof Subscriber) {
             ((Subscriber<T>) observer).add(new Subscription() {
                 @Override
                 public void unsubscribe() {
@@ -62,7 +62,7 @@ public class LoadSubscriber<T> extends Subscriber<T> implements DialogInterface.
             mProgress.show();
             mProgress.setOnCancelListener(this);
         }
-        if (mObserver != null && mObserver instanceof Subscriber) {
+        if (mObserver instanceof Subscriber) {
             ((Subscriber) mObserver).onStart();
         }
     }
@@ -85,7 +85,6 @@ public class LoadSubscriber<T> extends Subscriber<T> implements DialogInterface.
 
     @Override
     public void onNext(T o) {
-        requestCompleted();
         if (mObserver != null) {
             mObserver.onNext(o);
         }

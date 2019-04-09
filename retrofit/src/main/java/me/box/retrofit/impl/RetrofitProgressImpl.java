@@ -4,7 +4,9 @@
 
 package me.box.retrofit.impl;
 
-import android.content.DialogInterface; /**
+import android.content.DialogInterface;
+
+/**
  * Created by box on 2018/5/28.
  * <p>
  * 进度对话框

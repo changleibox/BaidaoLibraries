@@ -17,6 +17,7 @@ import rx.Subscription;
  * 基本的网络请求监听者
  */
 
+@SuppressWarnings("unused")
 public class ISubscriber<T> extends Subscriber<T> {
 
     @Nullable
@@ -33,7 +34,7 @@ public class ISubscriber<T> extends Subscriber<T> {
     public ISubscriber(@Nullable Observer<T> observer, boolean isShowPrompt) {
         this.mObserver = observer;
         this.isShowPrompt = isShowPrompt;
-        if (observer != null && observer instanceof Subscriber) {
+        if (observer instanceof Subscriber) {
             ((Subscriber<T>) observer).add(new Subscription() {
                 @Override
                 public void unsubscribe() {
@@ -50,7 +51,7 @@ public class ISubscriber<T> extends Subscriber<T> {
 
     @Override
     public void onStart() {
-        if (mObserver != null && mObserver instanceof Subscriber) {
+        if (mObserver instanceof Subscriber) {
             ((Subscriber) mObserver).onStart();
         }
     }

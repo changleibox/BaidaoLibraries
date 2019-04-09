@@ -17,9 +17,11 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
+import java.util.List;
 
 import me.box.retrofit.compat.TypeCompat;
 import me.box.retrofit.entity.BaseResponse;
+import me.box.retrofit.entity.PageResponse;
 import me.box.retrofit.entity.Response;
 import me.box.retrofit.exception.HttpException;
 import okhttp3.ResponseBody;
@@ -50,7 +52,7 @@ final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
         }
         final BaseResponse baseResponse = gson.fromJson(json, BaseResponse.class);
         if (!baseResponse.isSuccess()) {
-            throw new HttpException(baseResponse.getMsg(), baseResponse.getCode());
+            throw new HttpException(baseResponse.getMsg(), baseResponse.getCode(), json);
         }
         if (TypeCompat.isVoid(type) || TypeCompat.isNull(type)) {
             return null;
@@ -80,7 +82,8 @@ final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
             }
         } catch (JSONException ignored) {
         }
-        if (length == 0) {
+        List<?> objs;
+        if (length == 0 || data instanceof PageResponse && ((objs = ((PageResponse) data).getObjects()) == null || objs.isEmpty())) {
             throw HttpException.ERROR_NOT_DATA;
         }
         return data;

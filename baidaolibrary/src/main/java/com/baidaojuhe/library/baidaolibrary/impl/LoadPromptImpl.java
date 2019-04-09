@@ -9,6 +9,9 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
 import android.support.annotation.StringRes;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 /**
  * Created by box on 2019/2/22.
  */
@@ -19,6 +22,7 @@ public interface LoadPromptImpl {
     int MODE_NO_NETWORK = 1;
     int MODE_LOAD_FAILURE = 2;
 
+    @Retention(RetentionPolicy.SOURCE)
     @IntDef({MODE_SUCCESS, MODE_NO_DATA, MODE_NO_NETWORK, MODE_LOAD_FAILURE})
     @interface Mode {
     }

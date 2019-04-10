@@ -96,6 +96,7 @@ public class LoadSubscriber<T> extends Subscriber<T> implements DialogInterface.
     @Override
     public void onCancel(DialogInterface dialog) {
         if (!isUnsubscribed()) {
+            requestCompleted();
             unsubscribe();
             onCompleted();
         }

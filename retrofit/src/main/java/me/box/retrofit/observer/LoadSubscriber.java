@@ -69,7 +69,6 @@ public class LoadSubscriber<T> extends Subscriber<T> implements DialogInterface.
 
     @Override
     public void onCompleted() {
-        requestCompleted();
         if (mObserver != null) {
             mObserver.onCompleted();
         }
@@ -85,6 +84,7 @@ public class LoadSubscriber<T> extends Subscriber<T> implements DialogInterface.
 
     @Override
     public void onNext(T o) {
+        requestCompleted();
         if (mObserver != null) {
             mObserver.onNext(o);
         }

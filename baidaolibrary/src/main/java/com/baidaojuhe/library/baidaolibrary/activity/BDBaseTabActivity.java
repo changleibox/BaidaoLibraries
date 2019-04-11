@@ -17,7 +17,7 @@ import net.box.app.library.helper.IFragmentHelper;
  * Tab切换的Activity
  */
 
-public abstract class BDBaseTabActivity extends BDBaseActivity implements OnTabSelectedListener {
+public abstract class BDBaseTabActivity extends BDBaseAppCompatActivity implements OnTabSelectedListener {
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {

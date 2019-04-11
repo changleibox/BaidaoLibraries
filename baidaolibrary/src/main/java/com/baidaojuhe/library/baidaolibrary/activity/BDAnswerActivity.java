@@ -36,7 +36,7 @@ import rx.Observer;
  * <p>
  * 到访问卷答案选择
  */
-public abstract class BDAnswerActivity extends BDBaseActivity implements Observer<List<Answer>>, OnAnswerSelectedImpl {
+public abstract class BDAnswerActivity extends BDBaseAppCompatActivity implements Observer<List<Answer>>, OnAnswerSelectedImpl {
 
     private RecyclerView mRvAnswer;
 

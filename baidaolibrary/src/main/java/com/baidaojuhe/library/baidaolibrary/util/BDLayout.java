@@ -4,10 +4,10 @@
 
 package com.baidaojuhe.library.baidaolibrary.util;
 
+import android.app.Activity;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +25,7 @@ public class BDLayout {
         this.mLayoutParams = layoutParams;
     }
 
-    public void setContentView(@NonNull AppCompatActivity activity) {
+    public void setContentView(@NonNull Activity activity) {
         View contentView = createContentView(activity);
         if (contentView != null) {
             activity.setContentView(contentView);
@@ -33,7 +33,7 @@ public class BDLayout {
     }
 
     @Nullable
-    public View createContentView(@NonNull AppCompatActivity activity) {
+    public View createContentView(@NonNull Activity activity) {
         return createContentView(activity.getLayoutInflater(), (ViewGroup) activity.getWindow().getDecorView());
     }
 

@@ -30,7 +30,7 @@ import java.util.List;
  * 到访问卷答案
  */
 
-public abstract class BDBaseAnswerActivity extends BDBaseActivity {
+public abstract class BDBaseAnswerActivity extends BDBaseAppCompatActivity {
 
     private ArrayAdapter<?, ?> mArrayAdapter;
 

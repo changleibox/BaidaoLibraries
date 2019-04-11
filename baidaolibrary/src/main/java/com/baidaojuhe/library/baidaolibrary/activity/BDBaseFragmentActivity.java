@@ -14,7 +14,7 @@ import com.baidaojuhe.library.baidaolibrary.impl.ActivityListener;
 import com.baidaojuhe.library.baidaolibrary.impl.ContextExtend;
 import com.baidaojuhe.library.baidaolibrary.impl.IContext;
 import com.baidaojuhe.library.baidaolibrary.presenter.BaseClassPresenter;
-import com.baidaojuhe.library.baidaolibrary.rxandroid.RxActivity;
+import com.baidaojuhe.library.baidaolibrary.rxandroid.RxFragmentActivity;
 import com.baidaojuhe.library.baidaolibrary.util.BDLayout;
 
 import butterknife.ButterKnife;
@@ -27,12 +27,12 @@ import rx.subscriptions.CompositeSubscription;
  * activity基类
  */
 
-public abstract class BDBaseActivity extends RxActivity implements ContextExtend, IContext {
+public abstract class BDBaseFragmentActivity extends RxFragmentActivity implements ContextExtend, IContext {
 
     private CompositeSubscription mCompositeSubscription;
     private BaseClassPresenter mClassPresenter;
 
-    public BDBaseActivity() {
+    public BDBaseFragmentActivity() {
         mClassPresenter = new BaseClassPresenter(this);
     }
 

@@ -23,7 +23,7 @@ import com.baidaojuhe.library.baidaolibrary.widget.IToolbar;
  * 初始化actionbar
  */
 
-public abstract class BDActionBarActivity extends BDBaseActivity {
+public abstract class BDActionBarActivity extends BDBaseAppCompatActivity {
 
     @Nullable
     private IToolbar mToolbar;

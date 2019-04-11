@@ -60,12 +60,12 @@ public abstract class BDHttpConfig {
     }
 
     protected static <T> Subscriber<T> request(@Nullable IContext iContext, HttpRequest request, @NonNull Observable<T> observable, @Nullable Observer<T> observer, boolean isShowPrompt) {
-        if (iContext != null && iContext instanceof ContextExtend) {
+        if (iContext instanceof ContextExtend) {
             observable = observable.compose(((ContextExtend) iContext).bindToLifecycle());
         }
         Subscriber<T> subscriber = request.request(iContext, observable, new ISubscriber<>(observer, isShowPrompt));
         CompositeSubscription subscription;
-        if (iContext != null && iContext instanceof ContextExtend
+        if (iContext instanceof ContextExtend
                 && (subscription = ((ContextExtend) iContext).getCompositeSubscription()) != null) {
             subscription.add(subscriber);
         }

@@ -572,7 +572,7 @@ public class PicturesView extends LinearLayout {
         private void notifyDateSetChanged() {
             if (!TextUtils.isEmpty(mPath)) {
                 if (mWidth != 0 && mHeight != 0) {
-                    ImageLoader.into(getContext(), mPath, this, mWidth, mHeight);
+                    ImageLoader.into(mPath, this, mWidth, mHeight);
                 }
             } else if (mResId != 0) {
                 super.setImageResource(mResId);

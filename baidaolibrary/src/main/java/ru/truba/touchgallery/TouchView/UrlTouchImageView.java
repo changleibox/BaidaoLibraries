@@ -155,7 +155,7 @@ public class UrlTouchImageView extends RelativeLayout implements View.OnClickLis
 
         @Override
         protected Bitmap doInBackground(String... strings) {
-            return ImageLoader.get(mContext, strings[0], 0, isCircle ? new ICircleTransform(ICircleTransform.CIRCLE) : null);
+            return ImageLoader.get(strings[0], 0, isCircle ? new ICircleTransform(ICircleTransform.CIRCLE) : null);
         }
 
         @Override

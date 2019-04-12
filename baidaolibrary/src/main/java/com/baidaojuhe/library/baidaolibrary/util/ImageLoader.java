@@ -4,7 +4,7 @@
 
 package com.baidaojuhe.library.baidaolibrary.util;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.support.annotation.DrawableRes;
@@ -21,7 +21,6 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 import com.squareup.picasso.Transformation;
 
-import net.box.app.library.IContext;
 import net.box.app.library.util.IAppUtils;
 
 import java.io.File;
@@ -35,16 +34,16 @@ import java.util.WeakHashMap;
  * 加载图片
  */
 
-@SuppressWarnings({"WeakerAccess", "unused"})
+@SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue"})
 public class ImageLoader {
 
     private static final Map<String, Bitmap> CACHES_BITMAP_MAP = new WeakHashMap<>();
 
     @WorkerThread
-    public static Bitmap get(IContext iContext, String avatar, int defAvatar) {
+    public static Bitmap get(String avatar, int defAvatar) {
         Bitmap bitmap = CACHES_BITMAP_MAP.get(avatar);
         if (bitmap == null) {
-            bitmap = get(iContext, avatar, defAvatar, null);
+            bitmap = get(avatar, defAvatar, null);
             if (bitmap != null) {
                 CACHES_BITMAP_MAP.put(avatar, bitmap);
             }
@@ -53,9 +52,9 @@ public class ImageLoader {
     }
 
     @WorkerThread
-    public static Bitmap get(IContext iContext, String avatar, int defAvatar, @Nullable Transformation transformation) {
+    public static Bitmap get(String avatar, int defAvatar, @Nullable Transformation transformation) {
         Bitmap bitmap = null;
-        RequestCreator requestCreator = createRequestCreator(iContext, avatar, defAvatar, 0, 0, transformation);
+        RequestCreator requestCreator = createRequestCreator(avatar, defAvatar, 0, 0, transformation);
         try {
             bitmap = requestCreator == null ? null : requestCreator.get();
         } catch (IOException e) {
@@ -64,52 +63,53 @@ public class ImageLoader {
         return bitmap;
     }
 
-    public static void into(@NonNull Context context, @NonNull String path, @NonNull ImageView view) {
-        into(context, path, view, null);
+    public static void into(@NonNull String path, @NonNull ImageView view) {
+        into(path, view, null);
     }
 
-    public static void into(@NonNull Context context, @NonNull String path, @NonNull ImageView view, @Nullable Transformation transformation) {
+    public static void into(@NonNull String path, @NonNull ImageView view, @Nullable Transformation transformation) {
         IViewCompat.addOnceOnGlobalLayoutListener(view, () -> {
             int width = view.getMeasuredWidth();
             int height = view.getMeasuredHeight();
-            into(context, path, view, width, height, transformation);
+            into(path, view, width, height, transformation);
         });
     }
 
-    public static void into(@NonNull Context context, @NonNull String path, @NonNull ImageView view,
+    public static void into(@NonNull String path, @NonNull ImageView view,
                             @IntRange(from = 1) int width, @IntRange(from = 1) int height) {
-        into(context, path, view, width, height, null);
+        into(path, view, width, height, null);
     }
 
-    public static void into(@NonNull Context context, @NonNull String path, @NonNull ImageView view,
+    @SuppressLint("PrivateResource")
+    public static void into(@NonNull String path, @NonNull ImageView view,
                             @IntRange(from = 1) int width, @IntRange(from = 1) int height, @Nullable Transformation transformation) {
-        into(context, path, R.drawable.box_default_avatar_rect, view, width, height, transformation);
+        into(path, R.drawable.box_default_avatar_rect, view, width, height, transformation);
     }
 
-    public static void into(@NonNull Context context, @NonNull String path, @DrawableRes int defImage, @NonNull ImageView view) {
-        into(context, path, defImage, view, null);
+    public static void into(@NonNull String path, @DrawableRes int defImage, @NonNull ImageView view) {
+        into(path, defImage, view, null);
     }
 
-    public static void into(@NonNull Context context, @NonNull String path, @DrawableRes int defImage, @NonNull ImageView view, @Nullable Transformation transformation) {
+    public static void into(@NonNull String path, @DrawableRes int defImage, @NonNull ImageView view, @Nullable Transformation transformation) {
         IViewCompat.addOnceOnGlobalLayoutListener(view, () -> {
             int width = view.getMeasuredWidth();
             int height = view.getMeasuredHeight();
-            into(context, path, defImage, view, width, height, transformation);
+            into(path, defImage, view, width, height, transformation);
         });
     }
 
-    public static void into(@NonNull Context context, @NonNull String path, @DrawableRes int defImage, @NonNull ImageView view,
+    public static void into(@NonNull String path, @DrawableRes int defImage, @NonNull ImageView view,
                             @IntRange(from = 1) int width, @IntRange(from = 1) int height) {
-        into(context, path, defImage, view, width, height, null);
+        into(path, defImage, view, width, height, null);
     }
 
-    public static void into(@NonNull Context context, @Nullable String path, @DrawableRes int defImage, @NonNull ImageView view,
+    public static void into(@Nullable String path, @DrawableRes int defImage, @NonNull ImageView view,
                             @IntRange(from = 1) int width, @IntRange(from = 1) int height, @Nullable Transformation transformation) {
         if (TextUtils.isEmpty(path)) {
             view.setImageResource(defImage);
             return;
         }
-        RequestCreator creator = getCreator(context, path, defImage, getTransformation(width, height, transformation));
+        RequestCreator creator = getCreator(path, defImage, getTransformation(width, height, transformation));
         // if (width > 0 && height > 0) {
         //     creator = creator.resize(width, height).centerCrop();
         // }
@@ -117,7 +117,7 @@ public class ImageLoader {
         creator.into(view);
     }
 
-    private static RequestCreator getCreator(Context context, @NonNull String path, @DrawableRes int defImage, @Nullable Transformation transformation) {
+    private static RequestCreator getCreator(@NonNull String path, @DrawableRes int defImage, @Nullable Transformation transformation) {
         Picasso picasso = Picasso.get();
         // Picasso.setSingletonInstance(picasso);
         RequestCreator creator;
@@ -195,11 +195,11 @@ public class ImageLoader {
     }
 
     @Nullable
-    public static RequestCreator createRequestCreator(IContext iContext, String avatar, int defAvatar, int width, int height, Transformation transformation) {
+    public static RequestCreator createRequestCreator(String avatar, int defAvatar, int width, int height, Transformation transformation) {
         if (TextUtils.isEmpty(avatar)) {
             return null;
         }
-        RequestCreator creator = new Picasso.Builder(iContext.getActivity()).build().load(avatar);
+        RequestCreator creator = Picasso.get().load(avatar);
         if (defAvatar != 0) {
             creator = creator.placeholder(defAvatar).error(defAvatar);
         }

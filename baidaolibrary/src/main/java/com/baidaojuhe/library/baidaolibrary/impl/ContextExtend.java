@@ -4,14 +4,9 @@
 
 package com.baidaojuhe.library.baidaolibrary.impl;
 
-import android.support.annotation.CheckResult;
-import android.support.annotation.NonNull;
-
-import com.trello.rxlifecycle.LifecycleTransformer;
-
 import net.box.app.library.IContext;
 
-import rx.subscriptions.CompositeSubscription;
+import me.box.retrofit.impl.LifecycleImpl;
 
 /**
  * Created by box on 2017/7/25.
@@ -19,11 +14,6 @@ import rx.subscriptions.CompositeSubscription;
  * 上下文环境的扩展
  */
 
-public interface ContextExtend extends IContext, ContextImpl {
+public interface ContextExtend extends IContext, ContextImpl, LifecycleImpl {
 
-    CompositeSubscription getCompositeSubscription();
-
-    @NonNull
-    @CheckResult
-    <T> LifecycleTransformer<T> bindToLifecycle();
 }

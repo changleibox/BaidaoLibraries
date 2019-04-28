@@ -55,9 +55,10 @@ import rx.Observer;
  * 图片预览
  */
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "SwitchStatementWithTooFewBranches"})
 public class BDPreviewActivity extends BDActionBarActivity implements View.OnClickListener,
-        View.OnLongClickListener, BottomOpsDialog.OnItemClickListener, Observer<File> {
+        View.OnLongClickListener, BottomOpsDialog.OnItemClickListener, Observer<File>,
+        ViewPager.OnPageChangeListener {
 
     public static final int PAGE_MARGIN = 40;
 
@@ -106,7 +107,8 @@ public class BDPreviewActivity extends BDActionBarActivity implements View.OnCli
             if (pathList != null) {
                 imagePaths = pathList.toArray(new String[0]);
             }
-            mStartPosition = Integer.valueOf(uri.getQueryParameter(BDKey.KEY_CURRENT_POSITION));
+            final String position = uri.getQueryParameter(BDKey.KEY_CURRENT_POSITION);
+            mStartPosition = position != null ? Integer.valueOf(position) : 0;
         } else {
             imagePaths = getBundle().getStringArray(BDKey.KEY_IMAGE_PATHS);
             mStartPosition = getBundle().getInt(BDKey.KEY_CURRENT_POSITION);
@@ -134,12 +136,7 @@ public class BDPreviewActivity extends BDActionBarActivity implements View.OnCli
     @Override
     public void onInitListeners(@NonNull Bundle arguments, Bundle savedInstanceState) {
         mOperationDialog.setOnItemClickListener(this);
-        mVpImage.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-                mCurrentPosition = position;
-            }
-        });
+        mVpImage.addOnPageChangeListener(this);
         mVpImage.setCurrentItem(mStartPosition, false);
     }
 
@@ -240,8 +237,23 @@ public class BDPreviewActivity extends BDActionBarActivity implements View.OnCli
                 names.clear();
                 names.add(transitionName);
                 sharedElements.clear();
-                sharedElements.put(transitionName, sharedElement);
+                if (transitionName != null) {
+                    sharedElements.put(transitionName, sharedElement);
+                }
             }
         }
     };
+
+    @Override
+    public void onPageScrolled(int i, float v, int i1) {
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        mCurrentPosition = position;
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int i) {
+    }
 }

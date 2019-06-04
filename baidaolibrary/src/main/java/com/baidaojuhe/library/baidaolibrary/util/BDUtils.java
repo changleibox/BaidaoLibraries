@@ -5,6 +5,7 @@
 package com.baidaojuhe.library.baidaolibrary.util;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -17,7 +18,6 @@ import android.text.InputFilter;
 import android.text.TextUtils;
 
 import com.baidaojuhe.library.baidaolibrary.R;
-import com.baidaojuhe.library.baidaolibrary.common.BDConstants;
 import com.baidaojuhe.library.baidaolibrary.compat.ToastCompat;
 
 import net.box.app.library.IContext;
@@ -41,7 +41,7 @@ import static net.box.app.library.common.IConstants.ISize.LIMIT_PHONE_LENGTH;
  * 工具
  */
 
-@SuppressWarnings({"WeakerAccess", "unused"})
+@SuppressWarnings({"WeakerAccess", "unused", "UnusedReturnValue"})
 public final class BDUtils {
 
     public static String getAppName() {
@@ -76,7 +76,8 @@ public final class BDUtils {
     /**
      * 截图
      */
-    public static void startPhotoZoom(Activity activity, Uri uri, File output, int requestCode) throws Exception {
+    @SuppressLint("PrivateResource")
+    public static void startPhotoZoom(Activity activity, Uri uri, File output, int requestCode) {
         try {
             Intent intentPic = new Intent("com.android.camera.action.CROP");
             intentPic.setDataAndType(uri, "image/*");
@@ -98,7 +99,7 @@ public final class BDUtils {
         }
     }
 
-    public static int getAge(Date birthDay) throws Exception {
+    public static int getAge(Date birthDay) {
         Calendar cal = Calendar.getInstance();
 
         if (cal.before(birthDay)) {
@@ -130,9 +131,12 @@ public final class BDUtils {
     public static void setSuperPrivateFieldValue(Object instance, String variableName, Object value) {
         try {
             Class targetClass = instance.getClass().getSuperclass();
-            Field personNameField = targetClass.getDeclaredField(variableName);
-            personNameField.setAccessible(true);
-            personNameField.set(instance, value);
+            Field personNameField;
+            if (targetClass != null) {
+                personNameField = targetClass.getDeclaredField(variableName);
+                personNameField.setAccessible(true);
+                personNameField.set(instance, value);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -197,8 +201,7 @@ public final class BDUtils {
     public static InputFilter getPhoneFilter() {
         return (source, start, end, dest, dstart, dend)
                 -> TextUtils.isEmpty(source) ? null : source.toString()
-                .replaceAll(BDConstants.BD_BAR, IConstants.EMPTY)
-                .replaceAll(BDConstants.BD_SPACE, IConstants.EMPTY);
+                .replaceAll("\\D*", IConstants.EMPTY);
     }
 
     public static boolean nonNull(Object obj) {
@@ -233,14 +236,14 @@ public final class BDUtils {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("*/*");
-        String title = context.getString(net.box.app.library.R.string.box_lable_choose_file);
+        @SuppressLint("PrivateResource") String title = context.getString(net.box.app.library.R.string.box_lable_choose_file);
         context.startActivityForResult(Intent.createChooser(intent, title), IRequestCode.REQUEST_CHOOSE_FILE);
     }
 
     public static void call(String phone, Context context, int requestCode) {
         if (IPermissionCompat.checkSelfPermission((IContext) context, requestCode, Manifest.permission.CALL_PHONE)) {
             Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("tel:" + phone.replaceAll("-", "")));
+            intent.setData(Uri.parse("tel:" + phone.replaceAll("\\D*", "")));
             context.startActivity(intent);
         }
     }

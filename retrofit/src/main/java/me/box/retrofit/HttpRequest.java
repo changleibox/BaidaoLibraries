@@ -4,13 +4,13 @@
 
 package me.box.retrofit;
 
-import androidx.annotation.IntRange;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.Log;
 
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import me.box.retrofit.impl.RetrofitContext;
 import me.box.retrofit.observer.LoadSubscriber;
 import me.box.retrofit.retrofit.IGsonConverterFactory;
@@ -130,7 +130,7 @@ public class HttpRequest {
 
         if (logger != null) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(logger);
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            loggingInterceptor.level(HttpLoggingInterceptor.Level.BODY);
             httpClientBuilder.addInterceptor(loggingInterceptor);
         }
         return httpClientBuilder.build();

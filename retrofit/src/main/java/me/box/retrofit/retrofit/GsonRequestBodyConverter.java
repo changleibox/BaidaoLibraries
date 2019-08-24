@@ -13,6 +13,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.Charset;
 
+import androidx.annotation.NonNull;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okio.Buffer;
@@ -31,12 +32,12 @@ final class GsonRequestBodyConverter<T> implements Converter<T, RequestBody> {
     }
 
     @Override
-    public RequestBody convert(T value) throws IOException {
+    public RequestBody convert(@NonNull T value) throws IOException {
         Buffer buffer = new Buffer();
         Writer writer = new OutputStreamWriter(buffer.outputStream(), UTF_8);
         JsonWriter jsonWriter = gson.newJsonWriter(writer);
         adapter.write(jsonWriter, value);
         jsonWriter.close();
-        return RequestBody.create(MEDIA_TYPE, buffer.readByteString());
+        return RequestBody.create(buffer.readByteString(), MEDIA_TYPE);
     }
 }

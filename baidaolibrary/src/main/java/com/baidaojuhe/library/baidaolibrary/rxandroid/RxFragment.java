@@ -4,20 +4,23 @@
 
 package com.baidaojuhe.library.baidaolibrary.rxandroid;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.annotation.CheckResult;
-import androidx.annotation.NonNull;
 
 import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.RxLifecycle;
 import com.trello.rxlifecycle.android.FragmentEvent;
+import com.trello.rxlifecycle.android.RxLifecycleAndroid;
 
 import net.box.app.library.IFragment;
 
+import androidx.annotation.CallSuper;
+import androidx.annotation.CheckResult;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import rx.Observable;
 import rx.subjects.BehaviorSubject;
 
@@ -43,64 +46,82 @@ public abstract class RxFragment extends IFragment implements LifecycleProvider<
     @NonNull
     @CheckResult
     public final <T> LifecycleTransformer<T> bindToLifecycle() {
-        return RxLifecycle.bind(lifecycleSubject);
+        return RxLifecycleAndroid.bindFragment(lifecycleSubject);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    @CallSuper
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        lifecycleSubject.onNext(FragmentEvent.ATTACH);
     }
 
     @Override
+    @CallSuper
     public void onAttach(Context activity) {
         super.onAttach(activity);
         lifecycleSubject.onNext(FragmentEvent.ATTACH);
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    @CallSuper
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         lifecycleSubject.onNext(FragmentEvent.CREATE);
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+    @CallSuper
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         lifecycleSubject.onNext(FragmentEvent.CREATE_VIEW);
     }
 
     @Override
+    @CallSuper
     public void onStart() {
         super.onStart();
         lifecycleSubject.onNext(FragmentEvent.START);
     }
 
     @Override
+    @CallSuper
     public void onResume() {
         super.onResume();
         lifecycleSubject.onNext(FragmentEvent.RESUME);
     }
 
     @Override
+    @CallSuper
     public void onPause() {
         lifecycleSubject.onNext(FragmentEvent.PAUSE);
         super.onPause();
     }
 
     @Override
+    @CallSuper
     public void onStop() {
         lifecycleSubject.onNext(FragmentEvent.STOP);
         super.onStop();
     }
 
     @Override
+    @CallSuper
     public void onDestroyView() {
         lifecycleSubject.onNext(FragmentEvent.DESTROY_VIEW);
         super.onDestroyView();
     }
 
     @Override
+    @CallSuper
     public void onDestroy() {
         lifecycleSubject.onNext(FragmentEvent.DESTROY);
         super.onDestroy();
     }
 
     @Override
+    @CallSuper
     public void onDetach() {
         lifecycleSubject.onNext(FragmentEvent.DETACH);
         super.onDetach();

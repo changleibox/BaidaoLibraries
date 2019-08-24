@@ -46,9 +46,7 @@ dependencies {
     api 'com.trello:rxlifecycle-components:1.0'
     api 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
     // Retrofit2
-    //noinspection GradleDependency
     api 'com.squareup.retrofit2:retrofit:2.6.1'
-    //noinspection GradleDependency
     api 'com.squareup.retrofit2:converter-gson:2.6.1'
     api 'com.squareup.retrofit2:adapter-rxjava:2.6.1'
     api 'com.squareup.okhttp3:logging-interceptor:4.1.0'

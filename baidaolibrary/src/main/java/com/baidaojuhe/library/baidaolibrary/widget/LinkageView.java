@@ -7,20 +7,21 @@ package com.baidaojuhe.library.baidaolibrary.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.support.annotation.AttrRes;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.AttrRes;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
@@ -78,8 +79,8 @@ public class LinkageView extends LinearLayoutCompat {
 
     public LinkageView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        super.setOrientation(LinearLayout.HORIZONTAL);
-        super.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+        super.setOrientation(LinearLayoutCompat.HORIZONTAL);
+        super.setShowDividers(LinearLayoutCompat.SHOW_DIVIDER_MIDDLE);
         super.setDividerDrawable(ContextCompat.getDrawable(context, R.drawable.bd_shape_divider_vertical));
 
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.LinkageView, defStyleAttr, 0);
@@ -107,7 +108,7 @@ public class LinkageView extends LinearLayoutCompat {
 
     @Override
     public void setOrientation(int orientation) {
-        super.setOrientation(LinearLayout.HORIZONTAL);
+        super.setOrientation(LinearLayoutCompat.HORIZONTAL);
     }
 
     public void setOnSelectedListener(OnSelectedListener l) {

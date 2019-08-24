@@ -4,8 +4,8 @@
 
 package com.baidaojuhe.library.baidaolibrary.httprequest.util;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;

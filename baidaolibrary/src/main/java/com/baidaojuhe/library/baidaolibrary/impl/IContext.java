@@ -5,8 +5,8 @@
 package com.baidaojuhe.library.baidaolibrary.impl;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.baidaojuhe.library.baidaolibrary.util.BDLayout;
 

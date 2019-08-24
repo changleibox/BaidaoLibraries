@@ -15,8 +15,6 @@ import rx.Subscriber;
 import rx.android.MainThreadSubscription;
 import rx.functions.Func1;
 
-import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
-
 final class ItemButtonEditorActionEventOnSubscribe
     implements Observable.OnSubscribe<TextViewEditorActionEvent> {
   final ItemButton view;
@@ -29,8 +27,6 @@ final class ItemButtonEditorActionEventOnSubscribe
   }
 
   @Override public void call(final Subscriber<? super TextViewEditorActionEvent> subscriber) {
-    checkUiThread();
-
     TextView.OnEditorActionListener listener = new TextView.OnEditorActionListener() {
       @Override public boolean onEditorAction(TextView v, int actionId, KeyEvent keyEvent) {
         TextViewEditorActionEvent event = TextViewEditorActionEvent.create(v, actionId, keyEvent);

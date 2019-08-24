@@ -6,9 +6,9 @@ package com.baidaojuhe.library.baidaolibrary.widget;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.CheckResult;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.PopupWindowCompat;
+import androidx.annotation.CheckResult;
+import androidx.annotation.Nullable;
+import androidx.core.widget.PopupWindowCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;

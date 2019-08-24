@@ -4,8 +4,8 @@
 
 package com.baidaojuhe.library.baidaolibrary.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.baidaojuhe.library.baidaolibrary.adapter.viewholder.RadioViewHolder;
 import com.baidaojuhe.library.baidaolibrary.listener.OnItemCheckedListener;

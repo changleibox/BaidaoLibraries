@@ -4,9 +4,8 @@
 
 package com.baidaojuhe.library.baidaolibrary.activity;
 
-import android.support.design.widget.TabLayout;
-
 import com.baidaojuhe.library.baidaolibrary.listener.OnTabSelectedListener;
+import com.google.android.material.tabs.TabLayout;
 
 import net.box.app.library.IFragment;
 import net.box.app.library.helper.IFragmentHelper;

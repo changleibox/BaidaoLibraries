@@ -5,12 +5,13 @@
 package com.baidaojuhe.library.baidaolibrary.widget;
 
 import android.content.Context;
-import android.support.annotation.RestrictTo;
-import android.support.v7.widget.SearchView;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 
-import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
+import androidx.annotation.RestrictTo;
+import androidx.appcompat.widget.SearchView;
+
+import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 
 @SuppressWarnings("RestrictedApi")
 @RestrictTo(LIBRARY_GROUP)

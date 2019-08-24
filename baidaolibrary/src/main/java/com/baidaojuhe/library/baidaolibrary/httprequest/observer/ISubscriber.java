@@ -4,7 +4,7 @@
 
 package com.baidaojuhe.library.baidaolibrary.httprequest.observer;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.baidaojuhe.library.baidaolibrary.R;
 import com.baidaojuhe.library.baidaolibrary.compat.ToastCompat;

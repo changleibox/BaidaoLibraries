@@ -7,8 +7,8 @@ package com.baidaojuhe.library.baidaolibrary.util;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.annotation.Nullable;
-import android.support.annotation.WorkerThread;
+import androidx.annotation.Nullable;
+import androidx.annotation.WorkerThread;
 import android.text.TextUtils;
 
 import net.box.app.library.IContext;

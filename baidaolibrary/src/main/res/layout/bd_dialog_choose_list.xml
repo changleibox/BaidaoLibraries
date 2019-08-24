@@ -3,7 +3,7 @@
   ~ Copyright © 2017 CHANGLEI. All rights reserved.
   -->
 
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
                                         android:id="@+id/bd_rv_content"
                                         style="@style/BD.AppTheme.RecyclerView"
                                         android:layout_width="match_parent"

@@ -7,8 +7,8 @@ package com.baidaojuhe.library.baidaolibrary.compat;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 
 import com.baidaojuhe.library.baidaolibrary.R;
 import com.baidaojuhe.library.baidaolibrary.activity.BDDialogActivity;

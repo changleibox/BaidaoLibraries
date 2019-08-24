@@ -4,12 +4,13 @@
 
 package com.baidaojuhe.library.baidaolibrary.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.baidaojuhe.library.baidaolibrary.R;
 import com.baidaojuhe.library.baidaolibrary.adapter.viewholder.AnswerViewHolder;
@@ -23,8 +24,6 @@ import com.baidaojuhe.library.baidaolibrary.presenter.ExpandablePresenter;
 import net.box.app.library.adapter.IArrayAdapter;
 
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  * Created by box on 2018/5/2.

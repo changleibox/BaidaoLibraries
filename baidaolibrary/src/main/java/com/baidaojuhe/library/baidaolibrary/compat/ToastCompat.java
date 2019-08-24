@@ -4,8 +4,8 @@
 
 package com.baidaojuhe.library.baidaolibrary.compat;
 
-import android.support.annotation.IntDef;
-import android.support.annotation.StringRes;
+import androidx.annotation.IntDef;
+import androidx.annotation.StringRes;
 import android.widget.Toast;
 
 import net.box.app.library.helper.IAppHelper;

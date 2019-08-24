@@ -5,8 +5,8 @@
 package me.box.retrofit.observer;
 
 import android.content.DialogInterface;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import me.box.retrofit.impl.RetrofitProgressImpl;
 import me.box.retrofit.impl.ShowLoadImpl;

@@ -16,7 +16,7 @@
         android:background="@drawable/bd_shape_border_gray"
         android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/bd_et_content"
             style="@style/BD.AppTheme.Container.Layout"
             android:layout_height="0dp"

@@ -5,8 +5,8 @@
 package com.baidaojuhe.library.baidaolibrary.dialog;
 
 import android.content.Context;
-import android.support.annotation.ArrayRes;
-import android.support.annotation.Nullable;
+import androidx.annotation.ArrayRes;
+import androidx.annotation.Nullable;
 import android.view.View;
 
 import com.baidaojuhe.library.baidaolibrary.adapter.SimpleArrayAdapter;

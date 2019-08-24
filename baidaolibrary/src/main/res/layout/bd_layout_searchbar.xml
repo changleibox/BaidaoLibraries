@@ -34,7 +34,7 @@
         android:textColor="@color/box_text_color_blue"
         tools:ignore="RtlHardcoded"/>
 
-    <android.support.v7.widget.SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/bd_searchview"
         android:layout_width="match_parent"
         android:layout_height="32dp"

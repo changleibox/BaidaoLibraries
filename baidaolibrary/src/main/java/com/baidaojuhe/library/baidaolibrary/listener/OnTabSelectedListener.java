@@ -4,8 +4,9 @@
 
 package com.baidaojuhe.library.baidaolibrary.listener;
 
-import android.support.annotation.IdRes;
-import android.support.design.widget.TabLayout;
+import androidx.annotation.IdRes;
+
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * Created by box on 2017/10/23.

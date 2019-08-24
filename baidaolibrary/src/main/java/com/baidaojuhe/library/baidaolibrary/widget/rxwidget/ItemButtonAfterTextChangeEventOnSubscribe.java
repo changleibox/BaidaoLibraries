@@ -13,8 +13,6 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.android.MainThreadSubscription;
 
-import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
-
 final class ItemButtonAfterTextChangeEventOnSubscribe
     implements Observable.OnSubscribe<ItemButtonAfterTextChangeEvent> {
   final ItemButton view;
@@ -24,8 +22,6 @@ final class ItemButtonAfterTextChangeEventOnSubscribe
   }
 
   @Override public void call(final Subscriber<? super ItemButtonAfterTextChangeEvent> subscriber) {
-    checkUiThread();
-
     final TextWatcher watcher = new TextWatcher() {
       @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
       }

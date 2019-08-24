@@ -8,10 +8,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.v4.util.ArraySet;
 import android.text.TextUtils;
 import android.util.Base64;
+
+import androidx.annotation.Nullable;
+import androidx.collection.ArraySet;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;

@@ -4,7 +4,7 @@
 
 package me.box.socketlibrary;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.vilyever.socketclient.helper.SocketResponsePacket;
 

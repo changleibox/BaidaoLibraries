@@ -7,7 +7,7 @@ package com.baidaojuhe.library.baidaolibrary.compat;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.baidaojuhe.library.baidaolibrary.common.BDConstants;
 

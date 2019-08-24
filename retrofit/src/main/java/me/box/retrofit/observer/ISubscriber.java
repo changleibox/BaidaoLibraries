@@ -4,7 +4,7 @@
 
 package me.box.retrofit.observer;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import me.box.retrofit.impl.OnShowErrorMsgListener;
 import rx.Observer;

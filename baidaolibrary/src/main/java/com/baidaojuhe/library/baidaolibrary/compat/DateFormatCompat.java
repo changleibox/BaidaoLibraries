@@ -4,7 +4,7 @@
 
 package com.baidaojuhe.library.baidaolibrary.compat;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 

@@ -5,8 +5,8 @@
 package com.baidaojuhe.library.baidaolibrary.httprequest.observer;
 
 import android.content.DialogInterface;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import net.box.app.library.IContext;
 import net.box.app.library.impl.IProgressImpl;

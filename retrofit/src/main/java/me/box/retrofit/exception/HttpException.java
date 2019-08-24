@@ -4,7 +4,7 @@
 
 package me.box.retrofit.exception;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.SparseArray;
 
 import java.io.IOException;

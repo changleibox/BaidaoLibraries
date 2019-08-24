@@ -4,7 +4,7 @@
 
 package ru.truba.touchgallery.GalleryWidget;
 
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;

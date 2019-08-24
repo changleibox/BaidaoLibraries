@@ -4,8 +4,8 @@
 
 package com.baidaojuhe.library.baidaolibrary.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatButton;
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.MarginLayoutParams;

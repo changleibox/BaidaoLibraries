@@ -4,10 +4,10 @@
 
 package com.baidaojuhe.library.baidaolibrary.adapter;
 
-import android.support.annotation.MainThread;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.WorkerThread;
+import androidx.annotation.MainThread;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.WorkerThread;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;

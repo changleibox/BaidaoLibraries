@@ -6,9 +6,9 @@ package com.baidaojuhe.library.baidaolibrary.util;
 
 import android.annotation.SuppressLint;
 import android.net.Uri;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.widget.ImageView;

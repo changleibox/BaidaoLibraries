@@ -9,7 +9,7 @@
               android:background="@android:color/white"
               android:orientation="vertical">
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bd_btn_item"
         style="@style/BD.AppTheme.Button.Item"
         android:layout_width="match_parent"

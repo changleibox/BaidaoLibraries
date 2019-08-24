@@ -4,7 +4,7 @@
 
 package com.baidaojuhe.library.baidaolibrary.util;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import net.box.app.library.helper.IAppHelper;
 

@@ -7,8 +7,8 @@ package com.baidaojuhe.library.baidaolibrary.compat;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.view.ViewCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 import android.view.View;
 
 import com.baidaojuhe.library.baidaolibrary.common.BDConstants;

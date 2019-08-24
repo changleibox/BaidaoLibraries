@@ -30,7 +30,7 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/bd_selector_expand_collapse_arrows"/>
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/bd_tv_title"
                 style="@style/BD.AppTheme.TextView.SingleLine"
                 android:layout_marginStart="@dimen/sizePaddingNormal"
@@ -38,7 +38,7 @@
                 tools:text="@string/app_name"/>
         </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bd_rv_subitem"
             style="@style/BD.AppTheme.RecyclerView"/>
     </LinearLayout>

@@ -14,7 +14,7 @@
     android:paddingRight="@dimen/sizePaddingNormal"
     android:paddingTop="6dp">
 
-    <android.support.v7.widget.SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/bd_searchview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

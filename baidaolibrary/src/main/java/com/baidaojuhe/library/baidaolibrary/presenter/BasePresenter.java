@@ -5,7 +5,7 @@
 package com.baidaojuhe.library.baidaolibrary.presenter;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.baidaojuhe.library.baidaolibrary.impl.ContextExtend;
 

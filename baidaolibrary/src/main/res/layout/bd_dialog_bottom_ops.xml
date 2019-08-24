@@ -7,7 +7,7 @@
               style="@style/BD.AppTheme.Container.Layout"
               android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bd_rv_content"
         style="@style/BD.AppTheme.RecyclerView"
         android:layout_width="match_parent"

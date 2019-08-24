@@ -4,7 +4,7 @@
 
 package com.vilyever.socketclient.server;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.vilyever.socketclient.SocketClient;
 import com.vilyever.socketclient.helper.SocketClientAddress;

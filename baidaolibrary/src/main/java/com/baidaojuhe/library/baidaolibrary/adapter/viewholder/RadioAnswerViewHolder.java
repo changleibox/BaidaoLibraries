@@ -4,7 +4,7 @@
 
 package com.baidaojuhe.library.baidaolibrary.adapter.viewholder;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.ViewGroup;
 
 import com.baidaojuhe.library.baidaolibrary.adapter.RadioAdapter;

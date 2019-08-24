@@ -5,8 +5,8 @@
 package com.baidaojuhe.library.baidaolibrary.widget;
 
 import android.content.Context;
-import android.support.annotation.IntRange;
-import android.support.annotation.Nullable;
+import androidx.annotation.IntRange;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 
 import net.box.app.library.widget.ISwipeRecyclerView;

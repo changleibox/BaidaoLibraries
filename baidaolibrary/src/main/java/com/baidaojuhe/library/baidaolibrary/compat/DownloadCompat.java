@@ -6,8 +6,8 @@ package com.baidaojuhe.library.baidaolibrary.compat;
 
 import android.Manifest;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresPermission;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresPermission;
 
 import com.baidaojuhe.library.baidaolibrary.util.DownloadUtils;
 

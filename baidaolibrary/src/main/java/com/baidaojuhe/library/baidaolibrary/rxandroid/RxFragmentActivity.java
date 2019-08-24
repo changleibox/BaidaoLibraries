@@ -5,14 +5,15 @@
 package com.baidaojuhe.library.baidaolibrary.rxandroid;
 
 import android.os.Bundle;
-import android.support.annotation.CallSuper;
-import android.support.annotation.CheckResult;
-import android.support.annotation.NonNull;
 
-import com.trello.rxlifecycle.ActivityEvent;
-import com.trello.rxlifecycle.ActivityLifecycleProvider;
+import androidx.annotation.CallSuper;
+import androidx.annotation.CheckResult;
+import androidx.annotation.NonNull;
+
+import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.RxLifecycle;
+import com.trello.rxlifecycle.android.ActivityEvent;
 
 import net.box.app.library.IFragmentActivity;
 
@@ -22,7 +23,7 @@ import rx.subjects.BehaviorSubject;
 /**
  * Created by box on 2019/4/11.
  */
-public abstract class RxFragmentActivity extends IFragmentActivity implements ActivityLifecycleProvider {
+public abstract class RxFragmentActivity extends IFragmentActivity implements LifecycleProvider<ActivityEvent> {
 
     private final BehaviorSubject<ActivityEvent> lifecycleSubject = BehaviorSubject.create();
 
@@ -44,7 +45,7 @@ public abstract class RxFragmentActivity extends IFragmentActivity implements Ac
     @NonNull
     @CheckResult
     public final <T> LifecycleTransformer<T> bindToLifecycle() {
-        return RxLifecycle.bindActivity(lifecycleSubject);
+        return RxLifecycle.bind(lifecycleSubject);
     }
 
     @Override

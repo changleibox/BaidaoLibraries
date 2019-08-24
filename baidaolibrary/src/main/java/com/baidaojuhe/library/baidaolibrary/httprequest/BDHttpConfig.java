@@ -4,8 +4,8 @@
 
 package com.baidaojuhe.library.baidaolibrary.httprequest;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.baidaojuhe.library.baidaolibrary.httprequest.observer.Callback;
 import com.baidaojuhe.library.baidaolibrary.httprequest.observer.ISubscriber;

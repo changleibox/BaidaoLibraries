@@ -6,21 +6,22 @@ package com.baidaojuhe.library.baidaolibrary.rxandroid;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.CheckResult;
-import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.trello.rxlifecycle.FragmentEvent;
-import com.trello.rxlifecycle.FragmentLifecycleProvider;
+import androidx.annotation.CheckResult;
+import androidx.annotation.NonNull;
+
+import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.RxLifecycle;
+import com.trello.rxlifecycle.android.FragmentEvent;
 
 import net.box.app.library.IFragment;
 
 import rx.Observable;
 import rx.subjects.BehaviorSubject;
 
-public abstract class RxFragment extends IFragment implements FragmentLifecycleProvider {
+public abstract class RxFragment extends IFragment implements LifecycleProvider<FragmentEvent> {
 
     private final BehaviorSubject<FragmentEvent> lifecycleSubject = BehaviorSubject.create();
 
@@ -42,7 +43,7 @@ public abstract class RxFragment extends IFragment implements FragmentLifecycleP
     @NonNull
     @CheckResult
     public final <T> LifecycleTransformer<T> bindToLifecycle() {
-        return RxLifecycle.bindFragment(lifecycleSubject);
+        return RxLifecycle.bind(lifecycleSubject);
     }
 
     @Override
@@ -58,7 +59,7 @@ public abstract class RxFragment extends IFragment implements FragmentLifecycleP
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         lifecycleSubject.onNext(FragmentEvent.CREATE_VIEW);
     }

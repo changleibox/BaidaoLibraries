@@ -4,8 +4,8 @@
 
 package com.baidaojuhe.library.baidaolibrary.widget.rxwidget;
 
-import android.support.annotation.CheckResult;
-import android.support.annotation.NonNull;
+import androidx.annotation.CheckResult;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 
 import com.baidaojuhe.library.baidaolibrary.widget.ItemButton;

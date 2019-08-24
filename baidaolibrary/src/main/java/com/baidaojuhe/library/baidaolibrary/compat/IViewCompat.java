@@ -6,8 +6,8 @@ package com.baidaojuhe.library.baidaolibrary.compat;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.ViewTreeObserver;
 

@@ -5,20 +5,20 @@
 package com.baidaojuhe.library.baidaolibrary.activity;
 
 import android.os.Bundle;
-import android.support.annotation.CallSuper;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.SearchView.OnQueryTextListener;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.CallSuper;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.baidaojuhe.library.baidaolibrary.R;
 import com.baidaojuhe.library.baidaolibrary.adapter.SearchAdapter;
@@ -42,7 +42,7 @@ import java.util.List;
  */
 
 @SuppressWarnings("unused")
-public abstract class BDSearchActivity extends BDActionBarActivity implements OnQueryTextListener, OnItemClickListener {
+public abstract class BDSearchActivity extends BDActionBarActivity implements SearchView.OnQueryTextListener, OnItemClickListener {
 
     private static final int FIRST_PAGE = 1;
 

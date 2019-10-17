@@ -90,6 +90,9 @@ public class TypeCompat {
         } else if ($Gson$Types.equals(type, Boolean.class)) {
             tmpType = new TypeToken<Response<Boolean>>() {
             }.getType();
+        } else if ($Gson$Types.equals(type, Character.class)) {
+            tmpType = new TypeToken<Response<Character>>() {
+            }.getType();
         }
         return tmpType;
     }

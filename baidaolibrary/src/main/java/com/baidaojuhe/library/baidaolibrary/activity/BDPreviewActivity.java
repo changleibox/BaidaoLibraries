@@ -29,6 +29,7 @@ import com.baidaojuhe.library.baidaolibrary.common.BDConstants.BDKey;
 import com.baidaojuhe.library.baidaolibrary.common.BDConstants.BDRequestCode;
 import com.baidaojuhe.library.baidaolibrary.compat.DownloadCompat;
 import com.baidaojuhe.library.baidaolibrary.compat.IViewCompat;
+import com.baidaojuhe.library.baidaolibrary.compat.ImageCompat;
 import com.baidaojuhe.library.baidaolibrary.compat.VideoCompat;
 import com.baidaojuhe.library.baidaolibrary.dialog.BottomOpsDialog;
 import com.baidaojuhe.library.baidaolibrary.util.BDLayout;
@@ -220,7 +221,10 @@ public class BDPreviewActivity extends BDActionBarActivity implements View.OnCli
 
     @Override
     public void onNext(File file) {
-        showText(R.string.bd_prompt_file_download_success_to_dir, file.getAbsolutePath());
+        final String path = file.getAbsolutePath();
+        final String fileName = file.getName();
+        showText(R.string.bd_prompt_file_download_success_to_dir, path);
+        ImageCompat.insertImage(this, file);
     }
 
     private DownloadUtils.DownloadProgressListener mProgressListener = (bytesRead, contentLength, done) -> {

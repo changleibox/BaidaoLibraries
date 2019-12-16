@@ -21,6 +21,7 @@
     <string name="bd_prompt_phone_format_error">电话号码格式错误，请重新输入</string>
     <string name="bd_prompt_email_format_error">邮箱地址格式错误，请重新输入</string>
     <string name="bd_prompt_file_download_success_to_dir">文件已成功保存到%s文件夹下！</string>
+    <string name="bd_prompt_file_download_success_to_media_store">文件已成功保存到相册！</string>
     <string name="bd_prompt_downing_">正在下载…… %1$s</string>
     <string name="bd_prompt_webview_load_failure">网络地址解析失败</string>
     <string name="bd_prompt_load_failure">加载失败</string>

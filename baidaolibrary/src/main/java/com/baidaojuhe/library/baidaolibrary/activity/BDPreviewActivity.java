@@ -223,7 +223,7 @@ public class BDPreviewActivity extends BDActionBarActivity implements View.OnCli
     public void onNext(File file) {
         final String path = file.getAbsolutePath();
         final String fileName = file.getName();
-        showText(R.string.bd_prompt_file_download_success_to_dir, path);
+        showText(R.string.bd_prompt_file_download_success_to_media_store, path);
         ImageCompat.insertImage(this, file);
     }
 

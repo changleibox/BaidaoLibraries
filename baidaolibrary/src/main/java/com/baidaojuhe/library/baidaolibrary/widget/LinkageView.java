@@ -18,7 +18,6 @@ import androidx.annotation.AttrRes;
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +46,7 @@ import java.util.List;
  */
 
 @SuppressWarnings("unused")
-public class LinkageView extends LinearLayoutCompat {
+public class LinkageView extends LinearLayout {
 
     public static final int LEVEL_1 = 1;
     public static final int LEVEL_2 = 2;
@@ -79,8 +78,8 @@ public class LinkageView extends LinearLayoutCompat {
 
     public LinkageView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        super.setOrientation(LinearLayoutCompat.HORIZONTAL);
-        super.setShowDividers(LinearLayoutCompat.SHOW_DIVIDER_MIDDLE);
+        super.setOrientation(LinearLayout.HORIZONTAL);
+        super.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
         super.setDividerDrawable(ContextCompat.getDrawable(context, R.drawable.bd_shape_divider_vertical));
 
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.LinkageView, defStyleAttr, 0);
@@ -108,7 +107,7 @@ public class LinkageView extends LinearLayoutCompat {
 
     @Override
     public void setOrientation(int orientation) {
-        super.setOrientation(LinearLayoutCompat.HORIZONTAL);
+        super.setOrientation(LinearLayout.HORIZONTAL);
     }
 
     public void setOnSelectedListener(OnSelectedListener l) {
@@ -173,7 +172,7 @@ public class LinkageView extends LinearLayoutCompat {
         return getLinkages(getSelectedPositions());
     }
 
-    private RecyclerView addRecyclerViewToContainer(int level) {
+    private void addRecyclerViewToContainer(int level) {
         RecyclerView rvContent = new RecyclerView(mThemeWrapper);
         rvContent.setLayoutManager(new LinearLayoutManager(getContext()));
         ViewGroup.LayoutParams params = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT);
@@ -184,7 +183,6 @@ public class LinkageView extends LinearLayoutCompat {
         LinkageAdapter linkageAdapter = new LinkageAdapter(level);
         rvContent.setAdapter(linkageAdapter);
         mAdapters.add(linkageAdapter);
-        return rvContent;
     }
 
     private void setItemSelected(LinkageAdapter adapter, int level, int position) {
@@ -251,13 +249,13 @@ public class LinkageView extends LinearLayoutCompat {
             this.mItemSelectedListener = l;
         }
 
-        @SuppressWarnings("unused")
         public Linkage getSelectedItem() {
             return getItem(mSelectedPosition);
         }
 
+        @NonNull
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new ViewHolder(parent);
         }
 
@@ -272,7 +270,6 @@ public class LinkageView extends LinearLayoutCompat {
             holder.itemView.setSelected(mSelectedPosition == position);
         }
 
-        @SuppressWarnings("StatementWithEmptyBody")
         @Override
         public void onItemClick(IArrayAdapter parent, View view, int position, long id) {
             notifyItemChanged(mSelectedPosition);

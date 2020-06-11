@@ -148,7 +148,7 @@
         <item name="android:fadingEdge">none</item>
         <item name="android:transcriptMode">normal</item>
         <item name="android:overScrollMode">never</item>
-        <item name="layoutManager">android.support.v7.widget.LinearLayoutManager</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
     </style>
 
     <style name="BD.AppTheme.ImageView">
